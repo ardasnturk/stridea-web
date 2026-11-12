@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+/* Colours follow the app: airy blue-tinted background, white cards, one strong blue,
+   and the five heart-rate zone colours. System font first so Apple devices get SF Pro. */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  /* Rounded numerals like the app (SF Pro Rounded on Apple devices). */
+  --font-rounded: ui-rounded, "SF Pro Rounded", "Nunito", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --color-brand: #1463ff;
+  --color-brand-dark: #0d4fd6;
+  --color-brand-light: #7fb0ff;
+  --color-surface: #f4f7fd;
+  --color-night: #0a101d;
+  --color-ink: #0b1220;
+  --color-zone1: #3b9dff;
+  --color-zone2: #34c759;
+  --color-zone3: #f5c400;
+  --color-zone4: #ff9500;
+  --color-zone5: #ff3b30;
+  --color-good: #22b455;
+  /* Backgrounds inside the mock screens. */
+  --color-ios-bg: #f4f7fd;
+  --color-ios-card-dark: #161d2c;
+  --shadow-card: 0 1px 2px rgba(20, 60, 140, 0.04), 0 8px 24px -8px rgba(20, 60, 140, 0.14);
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.5, 1);
+}
+
+/* Font size in "design pixels": 1 unit = a quarter of the spacing scale, so it scales
+   together with paddings inside `.mock` (see below). */
+@utility fs-* {
+  font-size: calc(var(--spacing) / 4 * --value(number));
+}
+
+/* A mock screen is laid out for a 300px-wide phone screen with normal Tailwind spacing
+   classes; inside it the spacing scale and radii follow the frame's real width, so the
+   whole screen scales like a screenshot. The frame is the size container (PhoneFrame). */
+.mock {
+  --spacing: calc(100cqw / 300 * 4);
+  --radius-md: calc(var(--spacing) * 1.5);
+  --radius-lg: calc(var(--spacing) * 2);
+  --radius-xl: calc(var(--spacing) * 3);
+  --radius-2xl: calc(var(--spacing) * 4);
+  --radius-3xl: calc(var(--spacing) * 5);
+  --radius-4xl: calc(var(--spacing) * 7);
+  font-size: calc(var(--spacing) * 3);
+  line-height: 1.25;
+}
+
+.num {
+  font-family: var(--font-rounded);
+  font-variant-numeric: tabular-nums;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+body {
+  @apply bg-surface text-ink antialiased dark:bg-night dark:text-white;
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+:focus-visible {
+  @apply rounded-md outline-2 outline-offset-2 outline-brand;
+}
+
+/* Long Turkish words in headlines. */
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* ---------- Reveal on scroll ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 0.8s var(--ease-out-soft),
+    transform 0.8s var(--ease-out-soft);
+  transition-delay: var(--delay, 0ms);
+}
+.reveal[data-variant="scale"] {
+  transform: scale(0.94);
+}
+.reveal[data-variant="left"] {
+  transform: translate3d(-32px, 0, 0);
+}
+.reveal[data-variant="right"] {
+  transform: translate3d(32px, 0, 0);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Parallax ---------- */
+
+.parallax-slow {
+  transform: translate3d(0, calc(var(--parallax, 0) * 28px), 0);
+}
+.parallax-fast {
+  transform: translate3d(0, calc(var(--parallax, 0) * -56px), 0);
+}
+
+/* ---------- Ambient motion ---------- */
+
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -10px;
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(4%, -6%, 0) scale(1.08);
+  }
+  66% {
+    transform: translate3d(-5%, 4%, 0) scale(0.95);
+  }
+}
+.animate-blob {
+  animation: blob 18s ease-in-out infinite;
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.tab-progress {
+  transform-origin: left;
+  animation: progress var(--duration, 7000ms) linear forwards;
+}
+.tab-progress[data-paused="true"] {
+  animation-play-state: paused;
+}
+
+/* Scroll progress bar under the header. */
+.scroll-progress {
+  transform-origin: left;
+  transform: scaleX(var(--scroll, 0));
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .reveal,
+  .reveal[data-variant] {
+    opacity: 1;
+    transform: none;
+  }
+  .parallax-slow,
+  .parallax-fast {
+    transform: none;
+  }
+  .tab-progress,
+  .pulse-dot::after {
+    animation: none;
+  }
+}
+
+/* Hero entrance (one-shot). */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-in {
+  animation: hero-in 0.9s var(--ease-out-soft) both;
+}
+
+/* Current-position dot on the map mocks. */
+@keyframes pulse-ring {
+  from {
+    transform: scale(0.6);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.pulse-dot {
+  position: relative;
+}
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: var(--color-brand);
+  animation: pulse-ring 1.8s ease-out infinite;
+}
