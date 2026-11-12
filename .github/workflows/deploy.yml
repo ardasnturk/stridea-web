@@ -1,8 +1,8 @@
 name: Deploy to GitHub Pages
 
-# Manual only for now: the repository is private and no domain has been chosen yet.
-# To deploy on every push, add `push: { branches: [main] }` here (see README).
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:

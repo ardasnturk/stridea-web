@@ -210,18 +210,18 @@ export function MapArt({ drawn = true, duration = 1600, viewBox = "0 0 300 460",
 /* ---------- Screens ---------- */
 
 function TabBar() {
-  const side: IconName[] = ["target", "calendar", "chart", "heart"];
+  // The app's three tabs (Home, History, Stats) and the floating button that starts a walk.
+  const tabs: IconName[] = ["target", "calendar", "chart"];
   return (
-    <div className="mx-1 flex h-13 shrink-0 items-center justify-between rounded-4xl bg-white px-5 shadow-card dark:bg-ios-card-dark" aria-hidden="true">
-      {side.slice(0, 2).map((name, index) => (
-        <Icon key={name} name={name} className={`h-5 w-5 ${index === 0 ? "text-brand" : "text-gray-400"}`} />
-      ))}
-      <span className="-mt-5 flex h-13 w-13 items-center justify-center rounded-full bg-brand text-white shadow-lg shadow-brand/40 ring-4 ring-ios-bg dark:ring-night">
+    <div className="mx-1 flex shrink-0 items-center gap-2" aria-hidden="true">
+      <div className="flex h-13 flex-1 items-center justify-around rounded-4xl bg-white px-4 shadow-card dark:bg-ios-card-dark">
+        {tabs.map((name, index) => (
+          <Icon key={name} name={name} className={`h-5 w-5 ${index === 0 ? "text-brand" : "text-gray-400"}`} />
+        ))}
+      </div>
+      <span className="flex h-13 w-13 shrink-0 items-center justify-center rounded-full bg-brand text-white shadow-lg shadow-brand/40">
         <Icon name="walk" className="h-6 w-6" />
       </span>
-      {side.slice(2).map((name) => (
-        <Icon key={name} name={name} className="h-5 w-5 text-gray-400" />
-      ))}
     </div>
   );
 }

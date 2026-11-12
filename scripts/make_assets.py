@@ -4,7 +4,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 OUT = Path(__file__).resolve().parent.parent / "public" / "assets"
-NAME = sys.argv[1] if len(sys.argv) > 1 else "Steps"
+NAME = sys.argv[1] if len(sys.argv) > 1 else "Stridea"
 TOP, BOTTOM = (62, 142, 255), (12, 74, 224)
 SS = 4  # supersampling
 

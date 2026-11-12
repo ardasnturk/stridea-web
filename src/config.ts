@@ -5,8 +5,8 @@
  * HTML entries use `%APP_NAME%`, which `vite.config.ts` fills in.
  */
 
-/** Working name. Renaming the app = changing this line. */
-export const APP_NAME = "Steps";
+/** App name. Renaming the app = changing this line. */
+export const APP_NAME = "Stridea";
 export const BUNDLE_ID = "com.ardasnturk.steps";
 export const DEVELOPER = "Arda Sentürk";
 export const SUPPORT_EMAIL = "support@ardasnturk.com";
@@ -20,10 +20,10 @@ export const MIN_IOS = "18";
 export const APP_STORE_URL: string | null = null;
 
 /**
- * Public address of the site without a trailing slash, e.g. "https://steps.example.com".
- * `null` = no domain chosen yet: canonical and og:url tags are left out.
+ * Public address of the site without a trailing slash, must match `public/CNAME`.
+ * `null` = no domain: canonical and og:url tags are left out.
  */
-export const SITE_URL: string | null = null;
+export const SITE_URL: string | null = "https://stridea.ardasnturk.com";
 
 export type ScreenSlot = "today" | "walk" | "zones" | "metrics" | "insights";
 

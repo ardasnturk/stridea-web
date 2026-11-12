@@ -101,7 +101,7 @@ export const tr: HomeDictionary = {
       walk: {
         label: "Yürüyüşler",
         title: "Yürüyüşünü canlı haritada takip et",
-        text: "Başlamak için ortadaki düğmeye dokun. {app} sen yürüdükçe rotanı çizer; süre, mesafe, adım ve tempo hep gözünün önündedir.",
+        text: "Başlamak için yüzen yürüyüş düğmesine dokun. {app} sen yürüdükçe rotanı çizer; süre, mesafe, adım ve tempo hep gözünün önündedir.",
         points: [
           "Rotanın çizildiği canlı harita",
           "Süre, mesafe, adım ve tempo",
@@ -150,9 +150,9 @@ export const tr: HomeDictionary = {
   walk: {
     eyebrow: "Yürüyüş takibi",
     title: "Tek dokunuşla yürüyüşe başla",
-    subtitle: "Ayar yok, seçilecek mod yok. Ortadaki düğmeye bas ve yürü.",
+    subtitle: "Ayar yok, seçilecek mod yok. Yüzen yürüyüş düğmesine bas ve yürü.",
     steps: [
-      { title: "Ortadaki düğmeye dokun", text: "Yürüyüş hemen başlar, karşına canlı harita gelir." },
+      { title: "Yürüyüş düğmesine dokun", text: "Yürüyüş hemen başlar, karşına canlı harita gelir." },
       { title: "Rotanın oluşmasını izle", text: "Sen ilerledikçe rotan çizilir. Süre, mesafe, adım ve tempo canlı güncellenir; dilediğinde duraklatıp devam edebilirsin." },
       { title: "Apple Sağlık'ta hazır", text: "Bitirdiğinde yürüyüşün, rotasıyla birlikte yürüyüş antrenmanı olarak Apple Sağlık'a kaydedilir." },
     ],

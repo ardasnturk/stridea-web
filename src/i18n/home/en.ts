@@ -101,7 +101,7 @@ export const en: HomeDictionary = {
       walk: {
         label: "Walks",
         title: "Track a walk on a live map",
-        text: "Tap the centre button to start. {app} draws your route as you go and keeps time, distance, steps and pace in view.",
+        text: "Tap the floating walk button to start. {app} draws your route as you go and keeps time, distance, steps and pace in view.",
         points: [
           "Live map with your route drawn on it",
           "Timer, distance, steps and pace",
@@ -150,9 +150,9 @@ export const en: HomeDictionary = {
   walk: {
     eyebrow: "Walk tracking",
     title: "Start a walk with one tap",
-    subtitle: "No setup and no modes to choose. Press the centre button and go.",
+    subtitle: "No setup and no modes to choose. Press the floating walk button and go.",
     steps: [
-      { title: "Tap the centre button", text: "The walk starts right away, with a live map in front of you." },
+      { title: "Tap the walk button", text: "The walk starts right away, with a live map in front of you." },
       { title: "Watch it take shape", text: "Your route is drawn as you move. Timer, distance, steps and pace update live, and you can pause and resume." },
       { title: "It's in Apple Health", text: "When you finish, the walk is saved to Apple Health as a walking workout, route included." },
     ],
