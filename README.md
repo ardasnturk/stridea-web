@@ -4,6 +4,20 @@ Landing page, privacy policy, terms of use and support page for the step-counter
 walk-tracker app for iPhone (working name **Steps**; the final name is not decided yet),
 in English and Turkish.
 
+What the site presents, and what has to stay in step with the app:
+
+- **Free:** steps and daily goal, history, walk recording, step trends, heart-rate zones
+  and the heart-rate chart.
+- **PRO** (yearly / monthly / weekly subscription or a one-time lifetime purchase; every
+  new install gets all of it free for 7 days, no payment or sign-up): personal suggestions
+  ("For You", plus the on-device "Your Week in Words" summary on iPhones with Apple
+  Intelligence), walking analysis, motion analysis and walking metrics. PRO items carry
+  the `ProBadge` (`src/components/ProBadge.tsx`).
+- **No prices on the site.** They are not set; the copy only names the plan types.
+- The privacy policy, terms and support page describe Apple Health, Motion & Fitness,
+  location, in-app purchases and RevenueCat. Update them whenever the app starts reading
+  new data or adds an SDK.
+
 - `/` – landing page
 - `/privacy/` – privacy policy (to be linked from the app and App Store Connect)
 - `/terms/` – terms of use
@@ -47,7 +61,10 @@ To add a language: add its code to `LANGUAGES`, `LANGUAGE_NAMES` and `LOCALES` i
 `src/i18n/types.ts`, create the two dictionary files and register them in
 `src/i18n/index.tsx`.
 
-The landing page sections are in `src/pages/home/`. Motion is plain CSS plus a few hooks
+The landing page sections are in `src/pages/home/`: `Hero`, `Stats`, `Showcase` (one tab
+per app screen), `Walk`, `Insights` (history and trends, anchor `#trends`), `Pro` (the
+three PRO features of the app's Insights tab, free vs PRO, the free week and the plan
+types, anchor `#pro`) and `Rest` (basics, privacy, FAQ, call to action). Motion is plain CSS plus a few hooks
 in `src/lib/motion.ts` (reveal on scroll, parallax, counters, looping demo steps); all of
 it is switched off for `prefers-reduced-motion`. The site follows the system light/dark
 setting.
@@ -56,7 +73,7 @@ setting.
 
 There are no real screenshots yet. Every slot in `SCREENS` in `src/config.ts` is `null`,
 so the site shows built-in HTML mocks of the screens (`src/pages/home/mocks.tsx`: Today,
-Walk, Heart-rate zones, Walking metrics) inside the device frame.
+Walk, Heart-rate zones, Walking metrics, Insights) inside the device frame.
 
 To use real screenshots:
 
@@ -68,7 +85,7 @@ To use real screenshots:
 3. Set the slot in `SCREENS` to `"<name>"`, e.g. `today: "today"`.
 
 A missing language falls back to English, then to the HTML mock. Slots: `today` (hero and
-"Today" tab), `walk`, `zones`, `metrics`.
+"Today" tab), `walk`, `zones`, `metrics`, `insights` (Stats › Insights with PRO unlocked).
 
 The mocks are laid out for a 300px-wide screen and scale with the frame; inside them use
 normal Tailwind spacing classes and `fs-<px>` for font sizes (see `.mock` in

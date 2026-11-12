@@ -11,7 +11,7 @@ export function Insights() {
   const { t } = useLanguage();
   const i = t.home.insights;
   return (
-    <section id="insights" className="scroll-mt-20 py-24 sm:py-32">
+    <section id="trends" className="scroll-mt-20 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading eyebrow={i.eyebrow} title={i.title} text={i.subtitle} />
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
@@ -194,7 +194,7 @@ function Metrics() {
     { label: m.doubleSupport, value: n(27.4, 1), unit: "%", trend: METRIC_TRENDS.doubleSupport },
   ];
   return (
-    <Tile icon="pulse" title={x.title} text={x.text}>
+    <Tile icon="pulse" title={x.title} text={x.text} pro>
       <ul className="space-y-2 text-sm">
         {rows.map((row) => (
           <li key={row.label} className="flex items-center gap-3 rounded-2xl bg-surface px-3 py-2.5 dark:bg-white/5">

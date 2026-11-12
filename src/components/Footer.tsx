@@ -23,7 +23,8 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-gray-600 dark:text-gray-400">
             <li><a className="hover:text-brand" href="/#features">{t.nav.features}</a></li>
             <li><a className="hover:text-brand" href="/#walks">{t.nav.walks}</a></li>
-            <li><a className="hover:text-brand" href="/#insights">{t.nav.insights}</a></li>
+            <li><a className="hover:text-brand" href="/#trends">{t.nav.trends}</a></li>
+            <li><a className="hover:text-brand" href="/#pro">{t.nav.pro}</a></li>
             <li><a className="hover:text-brand" href="/#faq">{t.nav.faq}</a></li>
             <li><a className="hover:text-brand" href="/support/">{t.footer.support}</a></li>
           </ul>

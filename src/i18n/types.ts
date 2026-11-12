@@ -31,7 +31,9 @@ export interface BaseDictionary {
   nav: {
     features: string;
     walks: string;
-    insights: string;
+    /** Link to the "History and trends" section (`home.insights`). */
+    trends: string;
+    pro: string;
     privacy: string;
     faq: string;
     download: string;
@@ -72,7 +74,7 @@ export interface BaseDictionary {
 }
 
 /** The screens shown as tabs in the showcase. Same ids as the screenshot slots in `src/config.ts`. */
-export type ShowcaseTabId = "today" | "walk" | "zones" | "metrics";
+export type ShowcaseTabId = "today" | "walk" | "zones" | "metrics" | "insights";
 
 /** Texts of the landing page. Lives in `src/i18n/home/<language>.ts`. */
 export interface HomeDictionary {
@@ -93,7 +95,7 @@ export interface HomeDictionary {
   /** Animated counters under the hero. */
   stats: { value: number; prefix?: string; suffix?: string; label: string }[];
   /** Units used in the mock screens and demos. */
-  units: { steps: string; km: string; kmh: string; perKm: string; min: string; kcal: string; bpm: string; floors: string; cm: string; days: string };
+  units: { steps: string; km: string; kmh: string; perKm: string; min: string; kcal: string; bpm: string; floors: string; cm: string; days: string; h: string; spm: string };
   /** Labels inside the HTML mock screens (shown while a screenshot slot is `null`). */
   mock: {
     today: {
@@ -113,6 +115,32 @@ export interface HomeDictionary {
     walk: { recording: string; duration: string; distance: string; steps: string; pace: string; pause: string; finish: string };
     zones: { title: string; total: string; zone: string; time: string; average: string; insightLabel: string; insight: string };
     metrics: { title: string; speed: string; stepLength: string; asymmetry: string; doubleSupport: string; heartRate: string; average: string; max: string };
+    /** The Stats screen with its "Insights" tab selected (PRO). Labels are the app's own. */
+    insights: {
+      /** Screen title and its four tabs; the last one is selected. */
+      title: string;
+      tabs: [string, string, string, string];
+      forYou: string;
+      /** Sample suggestions. "{left}" in a text is replaced with the steps left to today's goal. */
+      tips: [Item, Item, Item];
+      trend: string;
+      last7: string;
+      vs7: string;
+      last30: string;
+      vs30: string;
+      consistency: string;
+      consistencyNote: string;
+      weekdayPattern: string;
+      /** Sentence under the weekday chart, e.g. "Saturday is your most active day." */
+      mostActiveDay: string;
+      hours: string;
+      onFoot: string;
+      walksPerDay: string;
+      longestWalk: string;
+      longestSitting: string;
+      cadence: string;
+      vehicles: string;
+    };
   };
   showcase: {
     eyebrow: string;
@@ -157,6 +185,35 @@ export interface HomeDictionary {
     zones: { title: string; text: string };
     metrics: { title: string; text: string };
     heart: { title: string; text: string };
+  };
+  /** The PRO section: the three Insights features, then free vs PRO and the plans. Never state prices. */
+  pro: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    coach: {
+      title: string;
+      text: string;
+      weekTitle: string;
+      /** A sample of the on-device summary. */
+      weekSample: string;
+      weekNote: string;
+    };
+    analysis: { title: string; text: string; markersTitle: string; markers: string[]; markersNote: string };
+    motion: { title: string; text: string; note: string };
+    plans: {
+      freeTitle: string;
+      freeItems: string[];
+      proTitle: string;
+      proItems: string[];
+      trialTitle: string;
+      trialText: string;
+      plansTitle: string;
+      plansText: string;
+      /** Yearly, monthly, weekly, lifetime. */
+      options: [string, string, string, string];
+      note: string;
+    };
   };
   more: { title: string; subtitle: string; items: Item[] };
   privacy: {

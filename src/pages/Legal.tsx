@@ -1,7 +1,7 @@
 import { Icon } from "../components/Icon";
 import { useLanguage, type LegalSection } from "../i18n";
 
-const LINK = /(https?:\/\/[^\s]+|[\w.+-]+@[\w-]+\.[\w.]+)/g;
+const LINK = /(https?:\/\/[^\s]+|[\w.+-]+@[\w-]+(?:\.[\w-]+)+)/g;
 
 /** Turns URLs and e-mail addresses in plain text into links. */
 function linkify(text: string) {

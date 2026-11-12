@@ -33,6 +33,11 @@ const PATHS = {
   menu: "M4 7h16M4 12h16M4 17h16",
   close: "M6 6l12 12M18 6 6 18",
   server: "M4 4h16v6H4zM4 14h16v6H4zM8 7h.01M8 17h.01",
+  gift: "M4 11h16v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9ZM3 7h18v4H3zM12 7v14M12 7S10.5 3 8 3a2 2 0 0 0 0 4h4ZM12 7s1.5-4 4-4a2 2 0 0 1 0 4h-4Z",
+  car: "M3 16v-3.5l2-5.5h14l2 5.5V16H3ZM3.5 12h17M6 16v2.5M18 16v2.5M7 14h.01M17 14h.01",
+  chair: "M7 3v10h10M7 13v8M17 13v8M5 13h14",
+  trendUp: "M3 17l6-6 4 4 8-8M15 7h6v6",
+  lock: "M6 11h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1ZM8 11V7a4 4 0 0 1 8 0v4",
 } as const;
 
 export type IconName = keyof typeof PATHS;

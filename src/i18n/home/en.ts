@@ -17,11 +17,11 @@ export const en: HomeDictionary = {
   },
   stats: [
     { value: 5, label: "heart-rate zones, with time and average bpm" },
-    { value: 4, label: "walking metrics, each with its trend" },
+    { value: 7, label: "days of PRO free on every new install" },
     { value: 0, label: "accounts to create" },
-    { value: 0, label: "ads, trackers or third-party SDKs" },
+    { value: 0, label: "ads, analytics or trackers" },
   ],
-  units: { steps: "steps", km: "km", kmh: "km/h", perKm: "/km", min: "min", kcal: "kcal", bpm: "bpm", floors: "floors", cm: "cm", days: "days" },
+  units: { steps: "steps", km: "km", kmh: "km/h", perKm: "/km", min: "min", kcal: "kcal", bpm: "bpm", floors: "floors", cm: "cm", days: "days", h: "h", spm: "spm" },
   mock: {
     today: {
       title: "Today",
@@ -55,10 +55,36 @@ export const en: HomeDictionary = {
       average: "Avg",
       max: "Max",
     },
+    insights: {
+      title: "Stats",
+      tabs: ["Steps", "Zones", "Metrics", "Insights"],
+      forYou: "For You",
+      tips: [
+        { title: "Today's goal is close", text: "{left} steps to go: about a 15-minute walk." },
+        { title: "Keep the streak going", text: "12 days in a row at your goal. Today keeps it alive." },
+        { title: "Your walking hour", text: "You walk most around 6 PM. That's a natural slot for a planned walk." },
+      ],
+      trend: "Trend",
+      last7: "Last 7 Days",
+      vs7: "vs the 7 days before",
+      last30: "Last 30 Days",
+      vs30: "vs the 30 days before",
+      consistency: "Goal Consistency",
+      consistencyNote: "Days at goal, last 30 days",
+      weekdayPattern: "Weekday Pattern",
+      mostActiveDay: "Saturday is your most active day.",
+      hours: "Most Active Hours",
+      onFoot: "On Foot per Day",
+      walksPerDay: "Walks per Day",
+      longestWalk: "Longest Walk",
+      longestSitting: "Longest Sitting",
+      cadence: "Cadence",
+      vehicles: "In Vehicles per Day",
+    },
   },
   showcase: {
     eyebrow: "What's inside",
-    title: "Four screens. Everything about your walking.",
+    title: "Five screens. Everything about your walking.",
     subtitle: "From a glance at today's ring to the details of how you walk.",
     tabs: {
       today: {
@@ -98,14 +124,26 @@ export const en: HomeDictionary = {
       metrics: {
         label: "Walking metrics",
         title: "Look closer at how you walk",
-        text: "{app} brings the advanced walking metrics from Apple Health into one place and shows where each one is heading.",
+        text: "{app} brings the advanced walking metrics from Apple Health into one place and shows where each one is heading. The four metrics are part of PRO; the heart-rate chart is free.",
         points: [
           "Walking speed and step length",
           "Walking asymmetry and double support time",
-          "A trend sparkline for every metric",
-          "Heart-rate chart with average and max",
+          "A 30-day trend for every metric",
+          "Heart-rate chart with average and max, free for everyone",
         ],
         screenshotAlt: "Walking metrics screen with four metric cards and a heart-rate chart",
+      },
+      insights: {
+        label: "Insights",
+        title: "Find out what your numbers mean",
+        text: "The Insights tab reads your steps, walks and motion and tells you what stands out, with suggestions made for you. Everything is worked out on your iPhone.",
+        points: [
+          "“For You”: personal suggestions from your own numbers",
+          "This week against last week, this month against last month",
+          "Your most active hours, from iPhone's motion sensor",
+          "Time on foot, walks per day, longest sitting stretch and more",
+        ],
+        screenshotAlt: "Insights tab with personal suggestions, a trend comparison, a most active hours chart and motion stats",
       },
     },
   },
@@ -152,16 +190,58 @@ export const en: HomeDictionary = {
     },
     metrics: {
       title: "Metrics with direction",
-      text: "Each walking metric from Apple Health has a sparkline, so you can see which way it is moving.",
+      text: "Each walking metric from Apple Health has a 30-day trend, so you can see which way it is moving. Part of PRO.",
     },
     heart: {
       title: "Heart rate",
       text: "A heart-rate chart with your average and max.",
     },
   },
+  pro: {
+    eyebrow: "{app} PRO",
+    title: "Understand your walking, not just your step count",
+    subtitle:
+      "PRO adds personal suggestions, walking analysis and motion analysis on the Insights tab, plus the walking metrics. Everything is worked out on your iPhone, and your first week is free.",
+    coach: {
+      title: "Personal suggestions",
+      text: "“For You” turns your own numbers into tips: today's goal is close, you're ready for a higher goal or could try a closer one, your quietest weekday, long sitting to break up, your usual walking hour, a streak to keep, walks that are getting faster.",
+      weekTitle: "Your Week in Words",
+      weekSample: "You averaged 11,118 steps a day this week and reached your goal on six of the last seven days. Wednesday was your strongest day.",
+      weekNote: "On iPhones with Apple Intelligence (iOS 26 or later): a short summary written on the device by Apple's on-device model from those numbers. Not medical advice. Nothing is sent anywhere.",
+    },
+    analysis: {
+      title: "Walking analysis",
+      text: "From Apple Health: your last 7 days against the 7 before and your last 30 against the 30 before, how many of the last 30 days reached your goal, your weekday pattern, and your walks over 90 days with average distance, average pace and speed trend.",
+      markersTitle: "Fitness Markers",
+      markers: ["Walking steadiness", "Cardio fitness (VO₂ max)", "Resting heart rate", "Walking heart rate", "Six-minute walk"],
+      markersNote: "Shown when Apple Health has them.",
+    },
+    motion: {
+      title: "Motion analysis",
+      text: "iPhone's motion sensor logs walking, sitting and travel in the background. {app} analyses it on your device: your most active hours, time on foot, walks per day, longest walk, longest sitting stretch, cadence and time in vehicles.",
+      note: "A walk here is 2 minutes or more on foot. Needs Motion & Fitness access. The data never leaves your device.",
+    },
+    plans: {
+      freeTitle: "Free, forever",
+      freeItems: ["Steps and your daily goal", "History", "Walk recording", "Step trends", "Heart-rate zones and the heart-rate chart"],
+      proTitle: "{app} PRO",
+      proItems: [
+        "Personal suggestions",
+        "Walking analysis",
+        "Motion analysis",
+        "Walking metrics with 30-day trends",
+      ],
+      trialTitle: "Your first week of PRO is free",
+      trialText: "Every new install gets all PRO features for 7 days. No payment, no sign-up.",
+      plansTitle: "After the free week",
+      plansText: "Keep PRO with a subscription or a one-time purchase. Everything in the free list stays free either way.",
+      options: ["Yearly", "Monthly", "Weekly", "Lifetime · one-time purchase"],
+      note: "Subscriptions renew automatically until cancelled. You can cancel any time in your App Store account settings.",
+    },
+  },
   more: {
     title: "Small app, complete picture",
-    subtitle: "Everything {app} does, on one page.",
+    subtitle: "The everyday basics of {app}. All of these are free.",
     items: [
       { title: "Goal ring", text: "Your live step count fills a ring towards your daily goal." },
       { title: "Hourly chart", text: "See which hours of the day you actually moved." },
@@ -176,11 +256,11 @@ export const en: HomeDictionary = {
   privacy: {
     eyebrow: "Privacy",
     title: "Your steps are your business",
-    text: "{app} works without knowing who you are. There is nothing to sign up for and nothing leaves your iPhone.",
+    text: "{app} works without knowing who you are. There is nothing to sign up for, and your health, motion and location data never leaves your iPhone.",
     points: [
       { title: "No account", text: "Open the app and start. No sign-up, no email, no profile." },
-      { title: "No ads, no analytics", text: "No advertising, no analytics and no third-party SDKs in the app." },
-      { title: "On your device", text: "Your data stays on your iPhone and in Apple Health. {app} has no servers." },
+      { title: "No ads, no analytics", text: "No advertising, no analytics and no tracking. The only third-party component is RevenueCat, which manages PRO purchases and never receives health, motion or location data." },
+      { title: "On your device", text: "Your data stays on your iPhone and in Apple Health. Suggestions and analysis are worked out on the device. {app} has no servers of its own." },
       { title: "Location only for walks", text: "Location is used only while a walk is being recorded, to draw its route." },
     ],
     link: "Read the privacy policy",
@@ -195,15 +275,31 @@ export const en: HomeDictionary = {
     items: [
       {
         q: "Do I need to create an account?",
-        a: "No. {app} has no accounts. Open it, allow access to Apple Health and you're done.",
+        a: "No. {app} has no accounts. Five short setup steps let you pick a daily goal, connect Apple Health and allow motion access, and you're done.",
+      },
+      {
+        q: "Is {app} free?",
+        a: "The core is free and stays free: steps and your daily goal, history, walk recording, step trends and heart-rate zones. {app} PRO adds personal suggestions, walking analysis, motion analysis and walking metrics. Every new install gets all PRO features free for 7 days, with no payment and no sign-up.",
+      },
+      {
+        q: "What happens after the free week?",
+        a: "The PRO features lock and everything else keeps working. Nothing is charged, because the free week never asks for payment. If you want to keep PRO, you can choose a yearly, monthly or weekly subscription or a one-time lifetime purchase in the app. Subscriptions renew automatically until you cancel them in your App Store account settings.",
       },
       {
         q: "Which data does {app} use?",
-        a: "With your permission it reads steps, distance, energy, flights climbed, exercise time, heart rate, walking metrics, workouts and routes from Apple Health, and it writes the walks you record as walking workouts with their route. It uses motion data for live steps, and location only while a walk is being recorded.",
+        a: "With your permission it reads steps, distance, energy, flights climbed, exercise time, heart rate, walking metrics, walking steadiness, cardio fitness (VO₂ max), resting and walking heart rate, six-minute walk distance, workouts and routes from Apple Health, and it writes the walks you record as walking workouts with their route. It uses iPhone's Motion & Fitness data for live steps and for motion analysis, and location only while a walk is being recorded.",
       },
       {
         q: "Where is my data stored?",
-        a: "On your iPhone and in Apple Health. There are no ads, no analytics and no third-party SDKs, and nothing is sent to us.",
+        a: "On your iPhone and in Apple Health. There are no ads, no analytics and no tracking, and your health, motion and location data is never sent to us or to anyone else. Purchases are processed by Apple. RevenueCat, the service that manages PRO status, receives purchase information and an anonymous app user ID, nothing else.",
+      },
+      {
+        q: "How do the personal suggestions work?",
+        a: "They are worked out on your iPhone from your own steps, walks and motion: for example “1,500 steps to go: about a 15-minute walk”. On iPhones with Apple Intelligence (iOS 26 or later) there is also “Your Week in Words”, a short summary written on the device by Apple's on-device model from those numbers. It is not medical advice, and nothing is sent anywhere.",
+      },
+      {
+        q: "What does motion analysis need?",
+        a: "Motion & Fitness access. iPhone's motion sensor logs walking, sitting and travel in the background, and {app} turns that into your most active hours, time on foot, walks, longest sitting stretch, cadence and time in vehicles. The analysis happens on your iPhone and the data never leaves it.",
       },
       {
         q: "Will walks from my Apple Watch show up?",
@@ -225,7 +321,7 @@ export const en: HomeDictionary = {
   },
   cta: {
     title: "Ready for your next walk?",
-    text: "Steps, walks, heart-rate zones and walking metrics, all on your iPhone.",
-    soon: "{app} is coming to the App Store. Steps, walks, heart-rate zones and walking metrics, all on your iPhone.",
+    text: "Steps, walks, heart-rate zones and personal insights, all on your iPhone. PRO is free for your first week.",
+    soon: "{app} is coming to the App Store. Steps, walks, heart-rate zones and personal insights, all on your iPhone. PRO is free for your first week.",
   },
 };

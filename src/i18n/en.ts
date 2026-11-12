@@ -4,12 +4,13 @@ export const en: BaseDictionary = {
   meta: {
     title: "{app} – Step Counter & Walk Tracker for iPhone",
     description:
-      "{app} counts your steps, tracks your walks on a live map and shows heart-rate zones and walking metrics from Apple Health. No account, no ads, no analytics.",
+      "{app} counts your steps, tracks your walks on a live map and shows heart-rate zones, walking analysis and personal suggestions worked out on your iPhone. No account, no ads, no analytics.",
   },
   nav: {
     features: "Features",
     walks: "Walks",
-    insights: "Insights",
+    trends: "Trends",
+    pro: "PRO",
     privacy: "Privacy",
     faq: "FAQ",
     download: "Download",
@@ -34,19 +35,20 @@ export const en: BaseDictionary = {
     back: "Back to home",
     privacyTitle: "Privacy Policy",
     privacyIntro:
-      "This policy explains how the {app} app for iPhone (“{app}”, “the app”), developed by {developer}, handles your information. In short: {app} does not collect your personal data. Everything stays on your iPhone and in Apple Health.",
+      "This policy explains how the {app} app for iPhone (“{app}”, “the app”), developed by {developer}, handles your information. In short: your health, motion and location data stays on your iPhone and in Apple Health and is never sent to the developer or anyone else. The app has no accounts, no ads and no analytics. The only information that leaves your device is purchase information for {app} PRO, as described in section 7.",
     privacySections: [
       {
         title: "1. Data we collect",
         paragraphs: [
-          "None. {app} has no user accounts, no ads, no analytics and no third-party SDKs. The developer does not receive your steps, walks, routes, heart-rate data or anything else from the app.",
+          "{app} has no user accounts, no ads, and no analytics or tracking. The developer does not receive your steps, walks, routes, heart-rate data, motion activity, location or anything else you see in the app.",
+          "The app contains one third-party component: RevenueCat, a purchase SDK used only to manage {app} PRO purchases and subscription status. What it receives is described in section 7. It never receives health, motion or location data.",
         ],
       },
       {
         title: "2. What the app reads from Apple Health",
         paragraphs: [
-          "With your permission, {app} reads the following from Apple Health: steps, distance, energy burned, flights climbed, exercise time, heart rate, walking metrics (walking speed, step length, walking asymmetry and double support time), workouts and workout routes.",
-          "This data is only used to show your day, your history, your heart-rate zones and your trends inside the app. It is processed on your iPhone, is never sent to the developer or anyone else, and is never used for advertising.",
+          "With your permission, {app} reads the following from Apple Health: steps, distance, energy burned, flights climbed, exercise time, heart rate, resting heart rate, walking heart rate average, walking metrics (walking speed, step length, walking asymmetry and double support time), walking steadiness, cardio fitness (VO₂ max), six-minute walk distance, workouts and workout routes.",
+          "This data is only used to show your day, your history, your heart-rate zones, your trends, your walking analysis and your personal suggestions inside the app. It is processed on your iPhone, is never sent to the developer or anyone else, and is never used for advertising.",
         ],
       },
       {
@@ -58,34 +60,55 @@ export const en: BaseDictionary = {
       {
         title: "4. Location",
         paragraphs: [
-          "{app} uses your location only while a walk is being recorded, to draw the route on the map and measure the walk. The route is saved with the workout in Apple Health. Your location is not used at any other time and is never sent to the developer.",
+          "{app} uses your location only while a walk is being recorded, to draw the route on the map and measure the walk. The route is saved with the workout in Apple Health. Your location is not used at any other time and is never sent to the developer or anyone else.",
         ],
       },
       {
-        title: "5. Motion data",
+        title: "5. Motion & Fitness data",
         paragraphs: [
-          "{app} uses your iPhone's motion data to show your steps live. It is processed on your device.",
+          "With your permission (Motion & Fitness), {app} reads the activity recorded by your iPhone's motion sensor: whether you were walking, running, cycling, in a vehicle or stationary, and the steps counted by the pedometer. iPhone records this activity in the background by itself; the app only reads it.",
+          "The app uses it to show your steps live while you record a walk and for motion analysis: your most active hours, time on foot, walks, longest sitting stretch, cadence and time in vehicles. Daily summaries of this activity are stored only on your iPhone. Motion data is analysed on the device and is never sent to the developer or anyone else.",
         ],
       },
       {
-        title: "6. Where your data is stored",
+        title: "6. Personal suggestions and Apple Intelligence",
         paragraphs: [
-          "Your data stays on your device and in Apple Health. {app} has no servers and no cloud sync of its own. Data in Apple Health is managed by you in the Health app and is covered by Apple's privacy policy.",
+          "The suggestions in “For You” are worked out on your iPhone from your own numbers. On iPhones with Apple Intelligence (iOS 26 or later), “Your Week in Words” is a short summary written on the device by Apple's on-device model from those numbers. Nothing is sent to the developer or to anyone else to create suggestions or summaries.",
+          "Suggestions and summaries are general wellness information, not medical advice.",
         ],
       },
       {
-        title: "7. Your choices",
+        title: "7. Purchases and RevenueCat",
         paragraphs: [
-          "You decide which Apple Health data {app} may read or write, and whether it may use location and motion data. You can change these permissions at any time in the Settings and Health apps. Deleting the app removes the data it stores on your iPhone; data in Apple Health stays until you delete it there.",
+          "{app} PRO is offered as an in-app purchase: an auto-renewing subscription or a one-time purchase. Purchases are processed by Apple through your Apple Account. The developer never receives your payment details. Apple's handling of your purchase is covered by Apple's privacy policy.",
+          "To know whether PRO is active on your device, the app uses RevenueCat, a third-party purchase SDK. RevenueCat receives purchase and transaction information and an anonymous app user ID. It does not receive your name or email address from the app, and it never receives health, motion or location data. The app does not use RevenueCat for advertising or tracking. RevenueCat's privacy policy: https://www.revenuecat.com/privacy",
+          "The free first week of PRO needs no payment and no sign-up. The date it started is stored on your iPhone.",
         ],
       },
       {
-        title: "8. Children",
-        paragraphs: ["{app} is not directed at children under 13 and does not knowingly collect any data from them, or from anyone else."],
+        title: "8. Where your data is stored",
+        paragraphs: [
+          "Your health, motion and location data stays on your device and in Apple Health. {app} has no servers and no cloud sync of its own. Data in Apple Health is managed by you in the Health app and is covered by Apple's privacy policy. Purchase information is held by Apple and by RevenueCat as described in section 7.",
+        ],
       },
       {
-        title: "9. Changes and contact",
-        paragraphs: ["If this policy changes, we will update this page and the date above. Questions? Write to {email}."],
+        title: "9. Your choices",
+        paragraphs: [
+          "You decide which Apple Health data {app} may read or write, and whether it may use location and Motion & Fitness data. You can change these permissions at any time in the Settings and Health apps. Subscriptions are managed and cancelled in your App Store account settings.",
+          "Deleting the app removes the data it stores on your iPhone, including the daily motion summaries. The start date of the free week is kept, so that reinstalling the app does not restart it. Data in Apple Health stays until you delete it there.",
+        ],
+      },
+      {
+        title: "10. Children",
+        paragraphs: [
+          "{app} is not directed at children under 13 and does not knowingly collect personal data from them.",
+        ],
+      },
+      {
+        title: "11. Changes and contact",
+        paragraphs: [
+          "If this policy changes, we will update this page and the date above. Questions? Write to {email}.",
+        ],
       },
     ],
     termsTitle: "Terms of Use",
@@ -94,28 +117,44 @@ export const en: BaseDictionary = {
     termsSections: [
       {
         title: "1. License",
-        paragraphs: ["Your use of {app} is governed by Apple's Standard EULA: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
+        paragraphs: [
+          "Your use of {app} is governed by Apple's Standard EULA: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        ],
       },
       {
-        title: "2. Not a medical device",
+        title: "2. {app} PRO, subscriptions and purchases",
         paragraphs: [
-          "{app} is a fitness and wellness app. It is not a medical device and does not provide medical advice, diagnosis or treatment. Steps, distance, calories, heart rate, heart-rate zones and walking metrics come from your iPhone's sensors and from Apple Health, are estimates and may be inaccurate.",
+          "The core of {app} is free. {app} PRO adds personal suggestions, walking analysis, motion analysis and walking metrics. Every new install includes all PRO features free for the first week. The free week needs no payment and no sign-up, and it does not turn into a paid plan by itself.",
+          "After the free week, PRO is available as a yearly, monthly or weekly auto-renewing subscription, or as a one-time lifetime purchase. The price of each plan is shown in the app before you buy. Payment is charged to your Apple Account when you confirm the purchase.",
+          "Subscriptions renew automatically at the end of each period, at the price shown, until you cancel. To avoid being charged for the next period, cancel at least 24 hours before the current period ends. You can manage and cancel a subscription at any time in your App Store account settings. Deleting the app does not cancel a subscription.",
+          "The lifetime purchase is paid once and does not renew. Purchases are processed by Apple, and refunds are handled by Apple under its own terms. You can restore your purchases on a device signed in to the same Apple Account with Restore Purchases in the app. Apple's Standard EULA applies to all purchases.",
+        ],
+      },
+      {
+        title: "3. Not a medical device",
+        paragraphs: [
+          "{app} is a fitness and wellness app. It is not a medical device and does not provide medical advice, diagnosis or treatment. Steps, distance, calories, heart rate, heart-rate zones, walking metrics, fitness markers and motion analysis come from your iPhone's sensors and from Apple Health, are estimates and may be inaccurate.",
+          "Personal suggestions and the “Your Week in Words” summary, which is written by Apple's on-device model, are general information worked out from those numbers. They can be wrong and are not medical advice.",
           "Do not make health decisions based on the app alone. Talk to a doctor before starting a new exercise routine or if you have any concerns about your health.",
         ],
       },
       {
-        title: "3. Walk safely",
-        paragraphs: ["Pay attention to your surroundings while walking. Do not look at your phone when it is unsafe to do so, and follow local traffic rules."],
-      },
-      {
-        title: "4. Your data",
+        title: "4. Walk safely",
         paragraphs: [
-          "Your data belongs to you. It stays on your device and in Apple Health, and you manage it there. How {app} handles it is described in the Privacy Policy.",
+          "Pay attention to your surroundings while walking. Do not look at your phone when it is unsafe to do so, and follow local traffic rules.",
         ],
       },
       {
-        title: "5. Contact",
-        paragraphs: ["Questions about these terms: {email}."],
+        title: "5. Your data",
+        paragraphs: [
+          "Your data belongs to you. Your health, motion and location data stays on your device and in Apple Health, and you manage it there. How {app} handles it, and what purchase information is processed, is described in the Privacy Policy.",
+        ],
+      },
+      {
+        title: "6. Contact",
+        paragraphs: [
+          "Questions about these terms: {email}.",
+        ],
       },
     ],
   },
@@ -134,12 +173,32 @@ export const en: BaseDictionary = {
         text: "Check that Motion & Fitness access is allowed for {app} in Settings › Privacy & Security › Motion & Fitness.",
       },
       {
+        title: "Motion analysis is empty",
+        text: "Motion analysis needs Motion & Fitness access. Allow it in {app} under Settings › Motion Analysis, or in the Settings app › Privacy & Security › Motion & Fitness. The analysis is done on your iPhone and the data never leaves it.",
+      },
+      {
         title: "The route is not drawn",
         text: "Recording a route needs location access. Allow it for {app} in Settings › Privacy & Security › Location Services. Location is only used while a walk is being recorded.",
       },
       {
         title: "Heart-rate zones are empty",
         text: "Zones are calculated from heart-rate data in Apple Health. They appear when a device such as an Apple Watch has recorded your heart rate.",
+      },
+      {
+        title: "PRO features are locked",
+        text: "Every new install includes all PRO features free for the first week. After that they need {app} PRO. Steps, history, walk recording, step trends and heart-rate zones stay free. If you already bought PRO, restore your purchase.",
+      },
+      {
+        title: "Restore purchases",
+        text: "In {app}, open Settings › {app} PRO and tap Restore Purchases. You need to be signed in to the Apple Account you bought PRO with.",
+      },
+      {
+        title: "Manage or cancel a subscription",
+        text: "Subscriptions are managed by Apple. Open the Settings app › your name › Subscriptions, or tap Manage Subscription on the {app} PRO screen. Deleting the app does not cancel a subscription. For refunds, contact Apple.",
+      },
+      {
+        title: "“Your Week in Words” doesn't appear",
+        text: "The written summary needs an iPhone with Apple Intelligence (iOS 26 or later) and Apple Intelligence turned on. The other suggestions in “For You” work on every supported iPhone.",
       },
     ],
   },

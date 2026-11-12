@@ -1,18 +1,20 @@
 import { useEffect, useState, type ComponentType, type CSSProperties, type KeyboardEvent } from "react";
 import { Icon, type IconName } from "../../components/Icon";
 import { PhoneFrame, Screen } from "../../components/PhoneFrame";
+import { ProBadge } from "../../components/ProBadge";
 import { Reveal } from "../../components/Reveal";
 import { useLanguage, type ShowcaseTabId } from "../../i18n";
 import { useInView, useReducedMotion } from "../../lib/motion";
-import { MetricsMock, TodayMock, WalkMock, ZonesMock } from "./mocks";
+import { InsightsMock, MetricsMock, TodayMock, WalkMock, ZonesMock } from "./mocks";
 import { SectionHeading } from "./shared";
 
-/** One tab per screen. `Mock` is shown while the tab's screenshot slot in `src/config.ts` is `null`. */
-const TABS: { id: ShowcaseTabId; icon: IconName; Mock: ComponentType<{ active?: boolean }> }[] = [
+/** One tab per screen. `Mock` is shown while the tab's screenshot slot in `src/config.ts` is `null`; `pro` adds the PRO badge. */
+const TABS: { id: ShowcaseTabId; icon: IconName; Mock: ComponentType<{ active?: boolean }>; pro?: boolean }[] = [
   { id: "today", icon: "target", Mock: TodayMock },
   { id: "walk", icon: "walk", Mock: WalkMock },
   { id: "zones", icon: "heart", Mock: ZonesMock },
-  { id: "metrics", icon: "pulse", Mock: MetricsMock },
+  { id: "metrics", icon: "pulse", Mock: MetricsMock, pro: true },
+  { id: "insights", icon: "sparkles", Mock: InsightsMock, pro: true },
 ];
 const AUTO_ADVANCE_MS = 7000;
 
@@ -70,6 +72,7 @@ export function Showcase() {
                     }`}>
                     <Icon name={tab.icon} className="h-4 w-4" />
                     {a.tabs[tab.id].label}
+                    {tab.pro && <ProBadge onBrand={selected} />}
                     {selected && autoplay && (
                       <span key={`${active}`} aria-hidden="true" className="tab-progress absolute inset-x-0 bottom-0 h-0.5 bg-white/70"
                         style={{ "--duration": `${AUTO_ADVANCE_MS}ms` } as CSSProperties} />
@@ -93,7 +96,7 @@ export function Showcase() {
                     <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand/10 text-brand dark:bg-brand/20 dark:text-brand-light">
                       <Icon name={tab.icon} />
                     </span>
-                    <h3 className="mt-5 text-2xl font-bold tracking-tight sm:text-3xl">{content.title}</h3>
+                    <h3 className="mt-5 text-2xl font-bold tracking-tight sm:text-3xl">{content.title}{tab.pro && <ProBadge className="ml-2.5 -translate-y-1" />}</h3>
                     <p className="mt-4 text-lg text-pretty text-gray-600 dark:text-gray-400">{content.text}</p>
                     <ul className="mt-6 space-y-3">
                       {content.points.map((point) => (

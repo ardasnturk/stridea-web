@@ -28,6 +28,23 @@ export const METRIC_TRENDS = {
   asymmetry: [3.4, 3.1, 3.3, 2.8, 2.6, 2.7, 2.3, 2.1],
   doubleSupport: [28.6, 28.4, 28.5, 28.1, 27.9, 27.8, 27.6, 27.4],
 };
+/** Sample numbers of the Insights tab. `weekdays` is Monday-first (average steps); `hours` is average minutes on foot per hour. */
+export const INSIGHTS = {
+  week: { average: 11118, change: 6 },
+  month: { average: 10608, change: 4 },
+  goalDays: 21,
+  weekdays: [9800, 10400, 11900, 10200, 10900, 12600, 8700],
+  hours: [0, 0, 0, 0, 0, 0, 1, 4, 9, 6, 3, 3, 8, 10, 3, 2, 4, 7, 12, 10, 5, 2, 0, 0],
+  onFootMin: 72,
+  walksPerDay: 6,
+  longestWalkMin: 42,
+  longestSittingMin: 170,
+  cadence: 108,
+  vehiclesMin: 48,
+  walks: { count: 34, km: 3.6, pace: "11'12\"", speedChange: 5 },
+};
+export const TIP_ICONS: IconName[] = ["target", "flame", "clock"];
+
 export const HEART = { average: 104, max: 142, series: [82, 88, 97, 104, 112, 109, 118, 127, 142, 131, 119, 108, 111, 102, 96, 90] };
 
 /* ---------- Building blocks ---------- */
@@ -350,6 +367,104 @@ export function ZonesMock({ active = true }: { active?: boolean }) {
           <Icon name="sparkles" className="h-3 w-3" />{m.insightLabel}
         </p>
         <p className="mt-0.5 fs-12 leading-snug font-semibold">{m.insight}</p>
+      </div>
+    </MockScreen>
+  );
+}
+
+/** "+6%" with an arrow, green when up. */
+export function Change({ percent, className = "" }: { percent: number; className?: string }) {
+  return (
+    <span className={`num inline-flex items-center gap-0.5 font-semibold ${percent >= 0 ? "text-good" : "text-zone4"} ${className}`}>
+      <Icon name="trendUp" className={`h-[1em] w-[1em] ${percent >= 0 ? "" : "-scale-y-100"}`} />
+      {percent >= 0 ? "+" : "−"}{Math.abs(percent)}%
+    </span>
+  );
+}
+
+/** Average minutes on foot per hour of the day; the peak hour is green. */
+export function HoursChart({ active = true, className = "" }: { active?: boolean; className?: string }) {
+  const peak = Math.max(...INSIGHTS.hours);
+  return (
+    <div className={`flex items-end gap-[3%] ${className}`} aria-hidden="true">
+      {INSIGHTS.hours.map((value, index) => (
+        <span key={index} className={`flex-1 rounded-full transition-[height] duration-700 ease-out ${value === peak ? "bg-zone2" : value ? "bg-brand" : "bg-brand/15"}`}
+          style={{ height: active ? `${Math.max(5, (value / peak) * 100)}%` : "5%", transitionDelay: `${index * 25}ms` }} />
+      ))}
+    </div>
+  );
+}
+
+/** "2 h 50 min" / "42 min". */
+export function useDuration(): (minutes: number) => string {
+  const { t } = useLanguage();
+  const u = t.home.units;
+  return (minutes) => {
+    const hours = Math.floor(minutes / 60);
+    const rest = minutes % 60;
+    return [hours ? `${hours} ${u.h}` : "", rest || !hours ? `${rest} ${u.min}` : ""].filter(Boolean).join(" ");
+  };
+}
+
+/** Stats › Insights (PRO): "For You" suggestions, trend comparison, most active hours, motion stats. */
+export function InsightsMock({ active = true }: { active?: boolean }) {
+  const { t } = useLanguage();
+  const m = t.home.mock.insights;
+  const u = t.home.units;
+  const n = useNumber();
+  const duration = useDuration();
+  const comparisons = [
+    { title: m.last7, note: m.vs7, ...INSIGHTS.week },
+    { title: m.last30, note: m.vs30, ...INSIGHTS.month },
+  ];
+  return (
+    <MockScreen title={m.title}>
+      <div className="grid grid-cols-4 rounded-xl bg-brand/10 p-0.5 text-center fs-9 font-semibold dark:bg-white/10" aria-hidden="true">
+        {m.tabs.map((tab, index) => (
+          <span key={tab} className={`truncate rounded-lg px-0.5 py-1 ${index === 3 ? "bg-white text-ink shadow-card dark:bg-brand dark:text-white dark:shadow-none" : "text-gray-500 dark:text-gray-400"}`}>{tab}</span>
+        ))}
+      </div>
+      <MockCard className="px-3 py-2.5">
+        <p className="flex items-center gap-1 fs-11 font-bold"><Icon name="sparkles" className="h-3.5 w-3.5 text-brand" />{m.forYou}</p>
+        {m.tips.slice(0, 2).map((tip, index) => (
+          <div key={tip.title} className="mt-2 flex items-start gap-2">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand dark:bg-brand/25 dark:text-brand-light">
+              <Icon name={TIP_ICONS[index]} className="h-3.5 w-3.5" />
+            </span>
+            <p className="min-w-0">
+              <span className="block fs-10 font-semibold">{tip.title}</span>
+              <span className="block fs-9 leading-snug text-gray-500 dark:text-gray-400">{tip.text.replace("{left}", n(DAY.goal - DAY.steps))}</span>
+            </p>
+          </div>
+        ))}
+      </MockCard>
+      <MockCard className="px-3 py-2.5">
+        <p className="flex items-center gap-1 fs-11 font-bold"><Icon name="trendUp" className="h-3.5 w-3.5 text-brand" />{m.trend}</p>
+        {comparisons.map((row) => (
+          <div key={row.title} className="mt-1.5 flex items-center justify-between gap-2">
+            <p className="min-w-0">
+              <span className="block truncate fs-10 font-semibold">{row.title}</span>
+              <span className="block truncate fs-8 text-gray-500 dark:text-gray-400">{row.note}</span>
+            </p>
+            <p className="shrink-0 text-right">
+              <span className="num fs-13 font-bold">{n(row.average)}</span><span className="fs-8 text-gray-500 dark:text-gray-400"> {u.steps}</span>
+              <Change percent={row.change} className="ml-1.5 fs-9" />
+            </p>
+          </div>
+        ))}
+      </MockCard>
+      <MockCard className="flex min-h-0 flex-1 flex-col px-3 pt-2.5 pb-1.5">
+        <p className="flex items-center gap-1 fs-11 font-bold"><Icon name="walk" className="h-3.5 w-3.5 text-brand" />{m.hours}</p>
+        <HoursChart active={active} className="mt-1.5 min-h-0 flex-1" />
+        <div className="num mt-0.5 flex justify-between fs-8 text-gray-400" aria-hidden="true">
+          <span>00</span><span>06</span><span>12</span><span>18</span><span>24</span>
+        </div>
+      </MockCard>
+      <div className="grid grid-cols-2 gap-2">
+        <Stat icon="walk" tint="text-brand" label={m.onFoot} value={duration(INSIGHTS.onFootMin)} />
+        <Stat icon="repeat" tint="text-brand" label={m.walksPerDay} value={n(INSIGHTS.walksPerDay)} />
+        <Stat icon="clock" tint="text-zone2" label={m.longestWalk} value={duration(INSIGHTS.longestWalkMin)} />
+        <Stat icon="chair" tint="text-zone4" label={m.longestSitting} value={duration(INSIGHTS.longestSittingMin)} />
       </div>
     </MockScreen>
   );

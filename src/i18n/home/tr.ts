@@ -17,11 +17,11 @@ export const tr: HomeDictionary = {
   },
   stats: [
     { value: 5, label: "nabız bölgesi; süre ve ortalama nabızla" },
-    { value: 4, label: "yürüme ölçümü; her biri eğilimiyle" },
+    { value: 7, label: "gün ücretsiz PRO, her yeni kurulumda" },
     { value: 0, label: "açılacak hesap" },
-    { value: 0, label: "reklam, izleyici veya üçüncü taraf SDK" },
+    { value: 0, label: "reklam, analiz veya izleyici" },
   ],
-  units: { steps: "adım", km: "km", kmh: "km/sa", perKm: "/km", min: "dk", kcal: "kcal", bpm: "atım/dk", floors: "kat", cm: "cm", days: "gün" },
+  units: { steps: "adım", km: "km", kmh: "km/sa", perKm: "/km", min: "dk", kcal: "kcal", bpm: "atım/dk", floors: "kat", cm: "cm", days: "gün", h: "sa", spm: "adım/dk" },
   mock: {
     today: {
       title: "Bugün",
@@ -55,10 +55,36 @@ export const tr: HomeDictionary = {
       average: "Ort.",
       max: "Maks.",
     },
+    insights: {
+      title: "İstatistik",
+      tabs: ["Adım", "Bölgeler", "Metrikler", "Analiz"],
+      forYou: "Sana Özel",
+      tips: [
+        { title: "Bugünkü hedef yakın", text: "{left} adım kaldı: yaklaşık 15 dakikalık bir yürüyüş." },
+        { title: "Seriyi sürdür", text: "12 gündür üst üste hedefindesin. Bugün seriyi sürdürür." },
+        { title: "Yürüyüş saatin", text: "En çok 18:00 civarında yürüyorsun. Planlı bir yürüyüş için doğal bir zaman." },
+      ],
+      trend: "Eğilim",
+      last7: "Son 7 Gün",
+      vs7: "önceki 7 güne göre",
+      last30: "Son 30 Gün",
+      vs30: "önceki 30 güne göre",
+      consistency: "Hedef Tutarlılığı",
+      consistencyNote: "Son 30 günde hedefe ulaşılan gün",
+      weekdayPattern: "Haftalık Düzen",
+      mostActiveDay: "En aktif günün Cumartesi.",
+      hours: "En Aktif Saatler",
+      onFoot: "Günlük Ayakta",
+      walksPerDay: "Günlük Yürüyüş",
+      longestWalk: "En Uzun Yürüyüş",
+      longestSitting: "En Uzun Oturma",
+      cadence: "Kadans",
+      vehicles: "Günlük Araçta Geçen",
+    },
   },
   showcase: {
     eyebrow: "Neler var",
-    title: "Dört ekran. Yürüyüşünle ilgili her şey.",
+    title: "Beş ekran. Yürüyüşünle ilgili her şey.",
     subtitle: "Bugünkü halkaya kısa bir bakıştan, nasıl yürüdüğünün ayrıntılarına kadar.",
     tabs: {
       today: {
@@ -98,14 +124,26 @@ export const tr: HomeDictionary = {
       metrics: {
         label: "Yürüme ölçümleri",
         title: "Nasıl yürüdüğüne yakından bak",
-        text: "{app}, Apple Sağlık'taki gelişmiş yürüme ölçümlerini tek yerde toplar ve her birinin ne yöne gittiğini gösterir.",
+        text: "{app}, Apple Sağlık'taki gelişmiş yürüme ölçümlerini tek yerde toplar ve her birinin ne yöne gittiğini gösterir. Dört ölçüm PRO kapsamındadır; nabız grafiği ücretsizdir.",
         points: [
           "Yürüme hızı ve adım uzunluğu",
           "Yürüme asimetrisi ve çift destek süresi",
-          "Her ölçüm için eğilim grafiği",
-          "Ortalama ve maksimum değerleriyle nabız grafiği",
+          "Her ölçüm için 30 günlük eğilim",
+          "Ortalama ve maksimum değerleriyle nabız grafiği; herkese ücretsiz",
         ],
         screenshotAlt: "Dört ölçüm kartı ve nabız grafiğiyle Yürüme ölçümleri ekranı",
+      },
+      insights: {
+        label: "Analiz",
+        title: "Sayılarının ne anlattığını gör",
+        text: "Analiz sekmesi adımlarına, yürüyüşlerine ve hareketine bakar; öne çıkanları ve sana özel önerileri gösterir. Her şey iPhone'unda hesaplanır.",
+        points: [
+          "“Sana Özel”: kendi verilerinden çıkarılan kişisel öneriler",
+          "Bu hafta geçen haftaya, bu ay geçen aya göre nasıl",
+          "iPhone'un hareket sensöründen en aktif saatlerin",
+          "Ayakta geçen süre, günlük yürüyüş sayısı, en uzun oturma süresi ve fazlası",
+        ],
+        screenshotAlt: "Kişisel öneriler, eğilim karşılaştırması, en aktif saatler grafiği ve hareket istatistikleriyle Analiz sekmesi",
       },
     },
   },
@@ -152,16 +190,58 @@ export const tr: HomeDictionary = {
     },
     metrics: {
       title: "Yönü belli ölçümler",
-      text: "Apple Sağlık'taki her yürüme ölçümünün küçük bir eğilim grafiği vardır; ne yöne gittiğini hemen görürsün.",
+      text: "Apple Sağlık'taki her yürüme ölçümünün 30 günlük bir eğilim grafiği vardır; ne yöne gittiğini hemen görürsün. PRO kapsamındadır.",
     },
     heart: {
       title: "Nabız",
       text: "Ortalama ve maksimum değerlerinle nabız grafiği.",
     },
   },
+  pro: {
+    eyebrow: "{app} PRO",
+    title: "Yalnızca adım sayını değil, yürüyüşünü anla",
+    subtitle:
+      "PRO, Analiz sekmesine kişisel önerileri, yürüyüş analizini ve hareket analizini, ayrıca yürüme ölçümlerini ekler. Her şey iPhone'unda hesaplanır ve ilk haftan ücretsizdir.",
+    coach: {
+      title: "Kişisel öneriler",
+      text: "“Sana Özel”, kendi verilerini ipuçlarına dönüştürür: bugünkü hedef yakın, daha yüksek bir hedefe hazırsın ya da daha yakın bir hedef deneyebilirsin, en sakin günün, bölmen gereken uzun oturmalar, alıştığın yürüyüş saatin, sürdürülecek serin, hızlanan yürüyüşlerin.",
+      weekTitle: "Haftan Birkaç Cümlede",
+      weekSample: "Bu hafta günde ortalama 11.118 adım attın ve son yedi günün altısında hedefine ulaştın. En güçlü günün çarşambaydı.",
+      weekNote: "Apple Intelligence destekli iPhone'larda (iOS 26 veya sonrası): Apple'ın cihaz üzerindeki modelinin bu verilerden, cihazında yazdığı kısa bir özet. Tıbbi tavsiye değildir. Hiçbir yere veri gönderilmez.",
+    },
+    analysis: {
+      title: "Yürüyüş analizi",
+      text: "Apple Sağlık'tan: son 7 günün önceki 7 güne, son 30 günün önceki 30 güne göre durumu; son 30 günde hedefine kaç gün ulaştığın; haftalık düzenin; ortalama mesafe, ortalama tempo ve hız eğilimiyle 90 günlük yürüyüşlerin.",
+      markersTitle: "Kondisyon Göstergeleri",
+      markers: ["Yürüme dengesi", "Kardiyo kondisyonu (VO₂ max)", "Dinlenme nabzı", "Yürüme nabzı", "Altı dakika yürüyüşü"],
+      markersNote: "Apple Sağlık'ta varsa gösterilir.",
+    },
+    motion: {
+      title: "Hareket analizi",
+      text: "iPhone'un hareket sensörü yürümeyi, oturmayı ve yolculuğu arka planda kaydeder. {app} bunu cihazında analiz eder: en aktif saatlerin, ayakta geçen süren, günlük yürüyüş sayın, en uzun yürüyüşün, en uzun oturma süren, kadansın ve araçta geçen süren.",
+      note: "Burada yürüyüş, ayakta geçen 2 dakika ve üzeri süredir. Hareket ve Fitness izni gerekir. Veriler cihazından çıkmaz.",
+    },
+    plans: {
+      freeTitle: "Her zaman ücretsiz",
+      freeItems: ["Adımlar ve günlük hedef", "Geçmiş", "Yürüyüş kaydı", "Adım eğilimleri", "Nabız bölgeleri ve nabız grafiği"],
+      proTitle: "{app} PRO",
+      proItems: [
+        "Kişisel öneriler",
+        "Yürüyüş analizi",
+        "Hareket analizi",
+        "30 günlük eğilimleriyle yürüme ölçümleri",
+      ],
+      trialTitle: "İlk PRO haftan ücretsiz",
+      trialText: "Her yeni kurulumda tüm PRO özellikleri 7 gün boyunca açıktır. Ödeme yok, kayıt yok.",
+      plansTitle: "Ücretsiz haftadan sonra",
+      plansText: "PRO'ya abonelikle ya da tek seferlik satın almayla devam edebilirsin. Ücretsiz listedeki her şey her durumda ücretsiz kalır.",
+      options: ["Yıllık", "Aylık", "Haftalık", "Ömür boyu · tek seferlik"],
+      note: "Abonelikler iptal edilene kadar otomatik yenilenir. App Store hesap ayarlarından istediğin zaman iptal edebilirsin.",
+    },
+  },
   more: {
     title: "Küçük uygulama, eksiksiz tablo",
-    subtitle: "{app} uygulamasının yaptığı her şey tek sayfada.",
+    subtitle: "{app} uygulamasının gündelik temelleri. Hepsi ücretsiz.",
     items: [
       { title: "Hedef halkası", text: "Canlı adım sayın, günlük hedefine doğru bir halkayı doldurur." },
       { title: "Saatlik grafik", text: "Günün hangi saatlerinde gerçekten hareket ettiğini gör." },
@@ -176,11 +256,11 @@ export const tr: HomeDictionary = {
   privacy: {
     eyebrow: "Gizlilik",
     title: "Adımların yalnızca seni ilgilendirir",
-    text: "{app}, kim olduğunu bilmeden çalışır. Kaydolman gereken bir yer yok ve hiçbir şey iPhone'undan dışarı çıkmaz.",
+    text: "{app}, kim olduğunu bilmeden çalışır. Kaydolman gereken bir yer yok; sağlık, hareket ve konum verilerin iPhone'undan dışarı çıkmaz.",
     points: [
       { title: "Hesap yok", text: "Uygulamayı aç ve başla. Kayıt yok, e-posta yok, profil yok." },
-      { title: "Reklam yok, analiz yok", text: "Uygulamada reklam, analiz ve üçüncü taraf SDK'sı bulunmaz." },
-      { title: "Cihazında kalır", text: "Verilerin iPhone'unda ve Apple Sağlık'ta kalır. {app} uygulamasının sunucusu yoktur." },
+      { title: "Reklam yok, analiz yok", text: "Reklam, analiz ve izleme yok. Tek üçüncü taraf bileşen, PRO satın alımlarını yöneten RevenueCat'tir; sağlık, hareket ve konum verilerin ona asla gitmez." },
+      { title: "Cihazında kalır", text: "Verilerin iPhone'unda ve Apple Sağlık'ta kalır. Öneriler ve analizler cihazında hesaplanır. {app} uygulamasının kendine ait bir sunucusu yoktur." },
       { title: "Konum yalnızca yürüyüşte", text: "Konum yalnızca yürüyüş kaydedilirken, rotayı çizmek için kullanılır." },
     ],
     link: "Gizlilik politikasını oku",
@@ -195,15 +275,31 @@ export const tr: HomeDictionary = {
     items: [
       {
         q: "Hesap açmam gerekiyor mu?",
-        a: "Hayır. {app} uygulamasında hesap yoktur. Uygulamayı aç, Apple Sağlık erişimine izin ver; hepsi bu.",
+        a: "Hayır. {app} uygulamasında hesap yoktur. Beş kısa kurulum adımında günlük hedefini seçer, Apple Sağlık'a bağlanır ve hareket erişimine izin verirsin; hepsi bu.",
+      },
+      {
+        q: "{app} ücretsiz mi?",
+        a: "Temel özellikler ücretsizdir ve öyle kalır: adımlar ve günlük hedef, geçmiş, yürüyüş kaydı, adım eğilimleri ve nabız bölgeleri. {app} PRO; kişisel önerileri, yürüyüş analizini, hareket analizini ve yürüme ölçümlerini ekler. Her yeni kurulumda tüm PRO özellikleri 7 gün boyunca ücretsizdir; ödeme ve kayıt gerekmez.",
+      },
+      {
+        q: "Ücretsiz hafta bitince ne olur?",
+        a: "PRO özellikleri kilitlenir, geri kalan her şey çalışmaya devam eder. Ücretsiz hafta için ödeme bilgisi istenmediğinden senden hiçbir ücret alınmaz. PRO'ya devam etmek istersen uygulamada yıllık, aylık veya haftalık abonelik ya da tek seferlik ömür boyu satın alma seçebilirsin. Abonelikler, App Store hesap ayarlarından iptal edene kadar otomatik yenilenir.",
       },
       {
         q: "{app} hangi verileri kullanır?",
-        a: "İznin dahilinde Apple Sağlık'tan adım, mesafe, enerji, çıkılan kat, egzersiz süresi, nabız, yürüme ölçümleri, antrenman ve rota verilerini okur; kaydettiğin yürüyüşleri de rotalarıyla birlikte yürüyüş antrenmanı olarak yazar. Canlı adımlar için hareket verilerini, konumu ise yalnızca yürüyüş kaydedilirken kullanır.",
+        a: "İznin dahilinde Apple Sağlık'tan adım, mesafe, enerji, çıkılan kat, egzersiz süresi, nabız, yürüme ölçümleri, yürüme dengesi, kardiyo kondisyonu (VO₂ max), dinlenme ve yürüme nabzı, altı dakika yürüyüş mesafesi, antrenman ve rota verilerini okur; kaydettiğin yürüyüşleri de rotalarıyla birlikte yürüyüş antrenmanı olarak yazar. iPhone'un Hareket ve Fitness verilerini canlı adımlar ve hareket analizi için, konumu ise yalnızca yürüyüş kaydedilirken kullanır.",
       },
       {
         q: "Verilerim nerede saklanıyor?",
-        a: "iPhone'unda ve Apple Sağlık'ta. Reklam, analiz ve üçüncü taraf SDK'sı yoktur; bize hiçbir şey gönderilmez.",
+        a: "iPhone'unda ve Apple Sağlık'ta. Reklam, analiz ve izleme yoktur; sağlık, hareket ve konum verilerin bize ya da başka birine asla gönderilmez. Satın alımları Apple işler. PRO durumunu yöneten RevenueCat hizmeti yalnızca satın alma bilgilerini ve anonim bir uygulama kullanıcı kimliğini alır.",
+      },
+      {
+        q: "Kişisel öneriler nasıl çalışır?",
+        a: "Kendi adımlarından, yürüyüşlerinden ve hareketinden, iPhone'unda hesaplanır; örneğin “1.500 adım kaldı: yaklaşık 15 dakikalık bir yürüyüş”. Apple Intelligence destekli iPhone'larda (iOS 26 veya sonrası) ayrıca “Haftan Birkaç Cümlede” bulunur: Apple'ın cihaz üzerindeki modelinin bu verilerden, cihazında yazdığı kısa bir özet. Tıbbi tavsiye değildir ve hiçbir yere veri gönderilmez.",
+      },
+      {
+        q: "Hareket analizi için ne gerekir?",
+        a: "Hareket ve Fitness izni. iPhone'un hareket sensörü yürümeyi, oturmayı ve yolculuğu arka planda kaydeder; {app} bunu en aktif saatlerine, ayakta geçen sürene, yürüyüşlerine, en uzun oturma sürene, kadansına ve araçta geçen sürene dönüştürür. Analiz iPhone'unda yapılır ve veriler cihazından çıkmaz.",
       },
       {
         q: "Apple Watch ile kaydettiğim yürüyüşler görünür mü?",
@@ -225,7 +321,7 @@ export const tr: HomeDictionary = {
   },
   cta: {
     title: "Bir sonraki yürüyüşüne hazır mısın?",
-    text: "Adımlar, yürüyüşler, nabız bölgeleri ve yürüme ölçümleri; hepsi iPhone'unda.",
-    soon: "{app} yakında App Store'da. Adımlar, yürüyüşler, nabız bölgeleri ve yürüme ölçümleri; hepsi iPhone'unda.",
+    text: "Adımlar, yürüyüşler, nabız bölgeleri ve sana özel analizler; hepsi iPhone'unda. PRO ilk hafta ücretsiz.",
+    soon: "{app} yakında App Store'da. Adımlar, yürüyüşler, nabız bölgeleri ve sana özel analizler; hepsi iPhone'unda. PRO ilk hafta ücretsiz.",
   },
 };

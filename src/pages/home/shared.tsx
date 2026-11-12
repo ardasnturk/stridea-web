@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Icon, type IconName } from "../../components/Icon";
+import { ProBadge } from "../../components/ProBadge";
 import { Reveal } from "../../components/Reveal";
 
 export function SectionHeading({ eyebrow, title, text, align = "center" }: {
@@ -19,10 +20,12 @@ export function SectionHeading({ eyebrow, title, text, align = "center" }: {
 }
 
 /** A white card of the landing page's bento grids, like the app's cards. */
-export function Tile({ icon, title, text, children, className = "" }: {
+export function Tile({ icon, title, text, pro = false, children, className = "" }: {
   icon: IconName;
   title: string;
   text: string;
+  /** Shows the PRO badge next to the title. */
+  pro?: boolean;
   children?: ReactNode;
   className?: string;
 }) {
@@ -31,7 +34,7 @@ export function Tile({ icon, title, text, children, className = "" }: {
       <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand/10 text-brand dark:bg-brand/20 dark:text-brand-light">
         <Icon name={icon} className="h-5 w-5" />
       </span>
-      <h3 className="mt-4 text-xl font-bold tracking-tight">{title}</h3>
+      <h3 className="mt-4 text-xl font-bold tracking-tight">{title}{pro && <ProBadge className="ml-2 -translate-y-0.5" />}</h3>
       <p className="mt-2 text-pretty text-gray-600 dark:text-gray-400">{text}</p>
       {children && <div className="mt-6 flex flex-1 flex-col justify-end">{children}</div>}
     </article>

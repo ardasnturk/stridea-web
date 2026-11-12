@@ -25,7 +25,7 @@ export const APP_STORE_URL: string | null = null;
  */
 export const SITE_URL: string | null = null;
 
-export type ScreenSlot = "today" | "walk" | "zones" | "metrics";
+export type ScreenSlot = "today" | "walk" | "zones" | "metrics" | "insights";
 
 /**
  * Screenshot slots used on the landing page.
@@ -48,6 +48,8 @@ export const SCREENS: Record<ScreenSlot, string | null> = {
   zones: null,
   /** "Walking metrics" tab: four metric cards and the heart-rate chart. */
   metrics: null,
+  /** "Insights" tab (PRO): "For You" suggestions, trend comparison, most active hours, motion stats. */
+  insights: null,
 };
 
 /** Localized screenshot shown on the site. */
