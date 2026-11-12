@@ -35,20 +35,20 @@ export const tr: BaseDictionary = {
     back: "Ana sayfaya dön",
     privacyTitle: "Gizlilik Politikası",
     privacyIntro:
-      "Bu politika, {developer} tarafından geliştirilen {app} adlı iPhone uygulamasının (“{app}”, “uygulama”) bilgilerinizi nasıl ele aldığını açıklar. Kısacası: sağlık, hareket ve konum verileriniz iPhone'unuzda ve Apple Sağlık'ta kalır; geliştiriciye ya da başka birine asla gönderilmez. Uygulamada hesap, reklam ve analiz yoktur. Cihazınızdan çıkan tek bilgi, 7. bölümde açıklanan {app} PRO satın alma bilgileridir.",
+      "Bu politika, {developer} tarafından geliştirilen {app} adlı iPhone uygulamasının (“{app}”, “uygulama”) bilgilerinizi nasıl ele aldığını açıklar. Kısacası: sağlık, hareket ve konum verileriniz iPhone'unuzda ve Apple Sağlık'ta kalır. Uygulamada hesap, reklam ve analiz yoktur. Cihazınızdan yalnızca üç durumda bilgi çıkar: {app} PRO satın alma bilgileri (7. bölüm); bir yarışma oluşturur ya da bir yarışmaya katılırsanız, Apple'ın iCloud'unda saklanan ve yarışmanın üyelerine gösterilen görünen adınız ile o yarışmadaki adım toplamınız (8. bölüm); ve birkaç ayarı kendi cihazlarınız arasında, size özel iCloud saklama alanınızda aynı tutan iCloud Eşzamanlama (9. bölüm).",
     privacySections: [
       {
         title: "1. Topladığımız veriler",
         paragraphs: [
-          "{app} uygulamasında kullanıcı hesabı, reklam, analiz ve izleme yoktur. Geliştirici; adımlarınıza, yürüyüşlerinize, rotalarınıza, nabız verilerinize, hareket aktivitenize, konumunuza veya uygulamada gördüğünüz başka hiçbir bilgiye erişmez.",
-          "Uygulamada tek bir üçüncü taraf bileşen bulunur: yalnızca {app} PRO satın alımlarını ve abonelik durumunu yönetmek için kullanılan satın alma SDK'sı RevenueCat. RevenueCat'e iletilen bilgiler 7. bölümde açıklanır. Sağlık, hareket ve konum verileri RevenueCat'e asla iletilmez.",
+          "{app} uygulamasında kullanıcı hesabı, reklam, analiz ve izleme yoktur. Geliştirici; yürüyüşlerinize, rotalarınıza, nabız verilerinize, hareket aktivitenize, konumunuza veya uygulamada gördüğünüz başka hiçbir bilgiye erişmez. Tek istisna isteğe bağlıdır: bir yarışma oluşturur ya da bir yarışmaya katılırsanız, yazdığınız görünen ad ve yarışma günlerindeki adım toplamınız, 8. bölümde açıklandığı şekilde Apple'ın iCloud'unda saklanır ve o yarışmanın üyelerine gösterilir.",
+          "Uygulamada tek bir üçüncü taraf bileşen bulunur: yalnızca {app} PRO satın alımlarını ve abonelik durumunu yönetmek için kullanılan satın alma SDK'sı RevenueCat. RevenueCat'e iletilen bilgiler 7. bölümde açıklanır. Sağlık, hareket ve konum verileri RevenueCat'e asla iletilmez. Uygulama ayrıca, 8. ve 9. bölümlerde açıklandığı şekilde yarışmalar ve iCloud Eşzamanlama için Apple'ın iCloud'unu (CloudKit) kullanır. iCloud yalnızca iPhone'unuzda iCloud'a giriş yaptıysanız kullanılır.",
         ],
       },
       {
         title: "2. Uygulamanın Apple Sağlık'tan okudukları",
         paragraphs: [
           "{app}, izniniz dahilinde Apple Sağlık'tan şu verileri okur: adımlar, mesafe, harcanan enerji, çıkılan katlar, egzersiz süresi, nabız, dinlenme nabzı, yürüme nabzı ortalaması, yürüme ölçümleri (yürüme hızı, adım uzunluğu, yürüme asimetrisi ve çift destek süresi), yürüme dengesi, kardiyo kondisyonu (VO₂ max), altı dakika yürüyüş mesafesi, antrenmanlar ve antrenman rotaları.",
-          "Bu veriler yalnızca gününüzü, geçmişinizi, nabız bölgelerinizi, eğilimlerinizi, yürüyüş analizinizi ve kişisel önerilerinizi uygulama içinde göstermek için kullanılır. iPhone'unuzda işlenir; geliştiriciye ya da başka birine asla gönderilmez ve reklam amacıyla asla kullanılmaz.",
+          "Bu veriler yalnızca gününüzü, geçmişinizi, nabız bölgelerinizi, eğilimlerinizi, yürüyüş analizinizi ve kişisel önerilerinizi uygulama içinde göstermek için kullanılır. iPhone'unuzda işlenir ve reklam amacıyla asla kullanılmaz. Geliştiriciye ya da başka birine gönderilmez; tek istisna, katıldığınız bir yarışmada paylaşılan adım toplamınızdır (8. bölüm).",
         ],
       },
       {
@@ -86,26 +86,42 @@ export const tr: BaseDictionary = {
         ],
       },
       {
-        title: "8. Verilerinizin saklandığı yer",
+        title: "8. Yarışmalar",
         paragraphs: [
-          "Sağlık, hareket ve konum verileriniz cihazınızda ve Apple Sağlık'ta kalır. {app} uygulamasının kendine ait bir sunucusu ya da bulut eşzamanlaması yoktur. Apple Sağlık'taki verileri Sağlık uygulamasından siz yönetirsiniz; bu veriler için Apple'ın gizlilik politikası geçerlidir. Satın alma bilgileri, 7. bölümde açıklandığı şekilde Apple ve RevenueCat tarafından tutulur.",
+          "Yarışmalar isteğe bağlıdır. Bir yarışma oluşturabilir ya da altı karakterli bir kodla veya davet bağlantısıyla bir yarışmaya katılabilirsiniz. Katılmak isteyen her kişiyi yarışmayı kuran kişi kabul eder. Yarışmalar için iCloud gerekir: yalnızca iPhone'unuzda iCloud'a giriş yaptıysanız çalışır.",
+          "Kurduğunuz ya da katıldığınız bir yarışma için uygulama, Apple'ın iCloud'unda (CloudKit, uygulamanın genel “public” veritabanı) şunları saklar: yarışmanın adı, tarihleri ve adım hedefi, yazdığınız görünen ad ve yarışma günlerindeki toplam adım sayınız; bu sayı yarışma sürerken güncellenir. Bir yarışmanın üyeleri birbirlerinin görünen adını ve adım toplamını görür. Bir yarışmaya katılmak istediğinizde, yarışmayı kuran kişinin isteğinizi kabul ya da reddedebilmesi için görünen adınız saklanır.",
+          "Nabız, konum, rota, yürüyüş ya da başka hiçbir sağlık verisi paylaşılmaz. Kayıtlar anonim bir iCloud kullanıcı tanımlayıcısıyla ilişkilendirilir; geliştirici iCloud'dan Apple Hesabınızı (Apple ID), e-posta adresinizi ya da adınızı almaz. Geliştiricinin kendine ait bir sunucusu yoktur; bu veriler Apple'ın iCloud'unda tutulur.",
+          "Genel veritabanındaki kayıtlar, bir yarışmanın kodunu bilen herkes tarafından okunabilir; yani kod, özel bir bağlantı gibi çalışır. Kodu yalnızca yarışmada olmasını istediğiniz kişilerle paylaşın.",
+          "Yarışmayı kuran kişi yarışmayı uygulamadan silebilir; bu, yarışmayı herkes için kaldırır. Bir yarışmadan ayrıldığınızda yarışma uygulamanızdan kaldırılır; bildirilen son adım toplamınız ise yarışma silinene kadar iCloud'da kalabilir. Kaldırılmasını isterseniz {email} adresine yazın.",
         ],
       },
       {
-        title: "9. Tercihleriniz",
+        title: "9. iCloud Eşzamanlama",
         paragraphs: [
-          "{app} uygulamasının hangi Apple Sağlık verilerini okuyup yazabileceğine, konum ile Hareket ve Fitness verilerini kullanıp kullanamayacağına siz karar verirsiniz. Bu izinleri dilediğiniz zaman Ayarlar ve Sağlık uygulamalarından değiştirebilirsiniz. Abonelikler, App Store hesap ayarlarınızdan yönetilir ve iptal edilir.",
-          "Uygulamayı sildiğinizde, günlük hareket özetleri dahil iPhone'unuzda sakladığı veriler de silinir. Ücretsiz haftanın başlangıç tarihi ise, uygulamayı yeniden yüklemek haftayı baştan başlatmasın diye saklanmaya devam eder. Apple Sağlık'taki veriler siz silene kadar orada kalır.",
+          "iCloud Eşzamanlama varsayılan olarak açıktır ve uygulamanın Ayarlar bölümünden kapatılabilir. Günlük hedefinizi, birimlerinizi, kazandığınız madalyaları, görünen adınızı ve katıldığınız yarışmaların listesini, size özel iCloud anahtar-değer saklama alanınız aracılığıyla kendi cihazlarınız arasında aynı tutar. Bu bilgileri yalnızca siz okuyabilirsiniz. Yalnızca iPhone'unuzda iCloud'a giriş yaptıysanız kullanılır.",
         ],
       },
       {
-        title: "10. Çocuklar",
+        title: "10. Verilerinizin saklandığı yer",
+        paragraphs: [
+          "Sağlık, hareket ve konum verileriniz cihazınızda ve Apple Sağlık'ta kalır. Geliştiricinin kendine ait bir sunucusu yoktur. Yarışma verileri 8. bölümde açıklandığı şekilde Apple'ın iCloud'unda (CloudKit), eşzamanlanan ayarlar ise 9. bölümde açıklandığı şekilde size özel iCloud saklama alanınızda tutulur. Apple Sağlık'taki verileri Sağlık uygulamasından siz yönetirsiniz. Apple Sağlık'taki ve iCloud'daki veriler için Apple'ın gizlilik politikası geçerlidir. Satın alma bilgileri, 7. bölümde açıklandığı şekilde Apple ve RevenueCat tarafından tutulur.",
+        ],
+      },
+      {
+        title: "11. Tercihleriniz ve verilerinizin silinmesi",
+        paragraphs: [
+          "{app} uygulamasının hangi Apple Sağlık verilerini okuyup yazabileceğine, konum ile Hareket ve Fitness verilerini kullanıp kullanamayacağına siz karar verirsiniz. Bu izinleri dilediğiniz zaman Ayarlar ve Sağlık uygulamalarından değiştirebilirsiniz. Yarışmalar isteğe bağlıdır; iCloud Eşzamanlama'yı uygulamanın Ayarlar bölümünden kapatabilirsiniz. Abonelikler, App Store hesap ayarlarınızdan yönetilir ve iptal edilir.",
+          "Uygulamayı sildiğinizde, günlük hareket özetleri dahil iPhone'unuzda sakladığı veriler de silinir. Ücretsiz haftanın başlangıç tarihi ise, uygulamayı yeniden yüklemek haftayı baştan başlatmasın diye saklanmaya devam eder. Apple Sağlık'taki veriler siz silene kadar orada kalır. Uygulamayı silmek, kurduğunuz bir yarışmayı iCloud'dan silmez: yarışmayı önce uygulamadan silin. Ayrıldığınız bir yarışmadaki verilerinizin kaldırılması için {email} adresine yazın.",
+        ],
+      },
+      {
+        title: "12. Çocuklar",
         paragraphs: [
           "{app}, 13 yaşın altındaki çocuklara yönelik değildir ve onlardan bilerek kişisel veri toplamaz.",
         ],
       },
       {
-        title: "11. Değişiklikler ve iletişim",
+        title: "13. Değişiklikler ve iletişim",
         paragraphs: [
           "Bu politika değişirse bu sayfayı ve yukarıdaki tarihi güncelleriz. Sorularınız için: {email}.",
         ],
@@ -147,7 +163,7 @@ export const tr: BaseDictionary = {
       {
         title: "5. Verileriniz",
         paragraphs: [
-          "Verileriniz size aittir. Sağlık, hareket ve konum verileriniz cihazınızda ve Apple Sağlık'ta kalır; onları oradan siz yönetirsiniz. {app} uygulamasının verilerinizi nasıl ele aldığı ve hangi satın alma bilgilerinin işlendiği Gizlilik Politikası'nda açıklanır.",
+          "Verileriniz size aittir. Sağlık, hareket ve konum verileriniz cihazınızda ve Apple Sağlık'ta kalır; onları oradan siz yönetirsiniz. Yarışmaları ya da iCloud Eşzamanlama'yı kullanırsanız, Gizlilik Politikası'nda açıklanan bilgiler Apple'ın iCloud'unda saklanır. {app} uygulamasının verilerinizi nasıl ele aldığı ve hangi satın alma bilgilerinin işlendiği Gizlilik Politikası'nda açıklanır.",
         ],
       },
       {

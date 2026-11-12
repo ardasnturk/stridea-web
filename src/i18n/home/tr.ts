@@ -256,11 +256,11 @@ export const tr: HomeDictionary = {
   privacy: {
     eyebrow: "Gizlilik",
     title: "Adımların yalnızca seni ilgilendirir",
-    text: "{app}, kim olduğunu bilmeden çalışır. Kaydolman gereken bir yer yok; sağlık, hareket ve konum verilerin iPhone'undan dışarı çıkmaz.",
+    text: "{app}, kim olduğunu bilmeden çalışır. Kaydolman gereken bir yer yok; sağlık, hareket ve konum verilerin iPhone'unda ve Apple Sağlık'ta kalır. Yalnızca bir yarışmaya katılırsan görünen adın ve adım toplamın iCloud üzerinden yarışmanın üyeleriyle paylaşılır.",
     points: [
       { title: "Hesap yok", text: "Uygulamayı aç ve başla. Kayıt yok, e-posta yok, profil yok." },
       { title: "Reklam yok, analiz yok", text: "Reklam, analiz ve izleme yok. Tek üçüncü taraf bileşen, PRO satın alımlarını yöneten RevenueCat'tir; sağlık, hareket ve konum verilerin ona asla gitmez." },
-      { title: "Cihazında kalır", text: "Verilerin iPhone'unda ve Apple Sağlık'ta kalır. Öneriler ve analizler cihazında hesaplanır. {app} uygulamasının kendine ait bir sunucusu yoktur." },
+      { title: "Cihazında kalır", text: "Sağlık, hareket ve konum verilerin iPhone'unda ve Apple Sağlık'ta kalır. Öneriler ve analizler cihazında hesaplanır. {app} uygulamasının kendine ait bir sunucusu yoktur; isteğe bağlı yarışmalar ve iCloud Eşzamanlama, Apple'ın iCloud'unu kullanır." },
       { title: "Konum yalnızca yürüyüşte", text: "Konum yalnızca yürüyüş kaydedilirken, rotayı çizmek için kullanılır." },
     ],
     link: "Gizlilik politikasını oku",
@@ -291,7 +291,7 @@ export const tr: HomeDictionary = {
       },
       {
         q: "Verilerim nerede saklanıyor?",
-        a: "iPhone'unda ve Apple Sağlık'ta. Reklam, analiz ve izleme yoktur; sağlık, hareket ve konum verilerin bize ya da başka birine asla gönderilmez. Satın alımları Apple işler. PRO durumunu yöneten RevenueCat hizmeti yalnızca satın alma bilgilerini ve anonim bir uygulama kullanıcı kimliğini alır.",
+        a: "iPhone'unda ve Apple Sağlık'ta. Reklam, analiz ve izleme yoktur; sağlık, hareket ve konum verilerin bize ya da başka birine gönderilmez. İki şey Apple'ın iCloud'unu kullanır: bir yarışma oluşturur ya da bir yarışmaya katılırsan görünen adın ve o yarışmadaki adım toplamın orada saklanır ve yarışmanın üyelerine gösterilir; Ayarlar'dan kapatabileceğin iCloud Eşzamanlama ise hedefini, birimlerini, madalyalarını, görünen adını ve katıldığın yarışmaları kendi cihazların arasında aynı tutar. Satın alımları Apple işler. PRO durumunu yöneten RevenueCat hizmeti yalnızca satın alma bilgilerini ve anonim bir uygulama kullanıcı kimliğini alır.",
       },
       {
         q: "Kişisel öneriler nasıl çalışır?",

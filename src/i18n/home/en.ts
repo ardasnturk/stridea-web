@@ -256,11 +256,11 @@ export const en: HomeDictionary = {
   privacy: {
     eyebrow: "Privacy",
     title: "Your steps are your business",
-    text: "{app} works without knowing who you are. There is nothing to sign up for, and your health, motion and location data never leaves your iPhone.",
+    text: "{app} works without knowing who you are. There is nothing to sign up for, and your health, motion and location data stays on your iPhone and in Apple Health. Only if you join a competition are your display name and step total shared with its members through iCloud.",
     points: [
       { title: "No account", text: "Open the app and start. No sign-up, no email, no profile." },
       { title: "No ads, no analytics", text: "No advertising, no analytics and no tracking. The only third-party component is RevenueCat, which manages PRO purchases and never receives health, motion or location data." },
-      { title: "On your device", text: "Your data stays on your iPhone and in Apple Health. Suggestions and analysis are worked out on the device. {app} has no servers of its own." },
+      { title: "On your device", text: "Your health, motion and location data stays on your iPhone and in Apple Health. Suggestions and analysis are worked out on the device. {app} has no servers of its own; optional competitions and iCloud Sync use Apple's iCloud." },
       { title: "Location only for walks", text: "Location is used only while a walk is being recorded, to draw its route." },
     ],
     link: "Read the privacy policy",
@@ -291,7 +291,7 @@ export const en: HomeDictionary = {
       },
       {
         q: "Where is my data stored?",
-        a: "On your iPhone and in Apple Health. There are no ads, no analytics and no tracking, and your health, motion and location data is never sent to us or to anyone else. Purchases are processed by Apple. RevenueCat, the service that manages PRO status, receives purchase information and an anonymous app user ID, nothing else.",
+        a: "On your iPhone and in Apple Health. There are no ads, no analytics and no tracking, and your health, motion and location data is not sent to us or to anyone else. Two things use Apple's iCloud: if you create or join a competition, your display name and your step total for that competition are stored there and shown to its members; and iCloud Sync, which you can turn off in Settings, keeps your goal, units, medals, display name and joined competitions the same across your own devices. Purchases are processed by Apple. RevenueCat, the service that manages PRO status, receives purchase information and an anonymous app user ID, nothing else.",
       },
       {
         q: "How do the personal suggestions work?",

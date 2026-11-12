@@ -35,20 +35,20 @@ export const en: BaseDictionary = {
     back: "Back to home",
     privacyTitle: "Privacy Policy",
     privacyIntro:
-      "This policy explains how the {app} app for iPhone (“{app}”, “the app”), developed by {developer}, handles your information. In short: your health, motion and location data stays on your iPhone and in Apple Health and is never sent to the developer or anyone else. The app has no accounts, no ads and no analytics. The only information that leaves your device is purchase information for {app} PRO, as described in section 7.",
+      "This policy explains how the {app} app for iPhone (“{app}”, “the app”), developed by {developer}, handles your information. In short: your health, motion and location data stays on your iPhone and in Apple Health. The app has no accounts, no ads and no analytics. Information leaves your device in three cases only: purchase information for {app} PRO (section 7); if you create or join a competition, your display name and your step total for that competition, which are stored in Apple's iCloud and shown to its members (section 8); and iCloud Sync, which keeps a few settings the same across your own devices in your private iCloud storage (section 9).",
     privacySections: [
       {
         title: "1. Data we collect",
         paragraphs: [
-          "{app} has no user accounts, no ads, and no analytics or tracking. The developer does not receive your steps, walks, routes, heart-rate data, motion activity, location or anything else you see in the app.",
-          "The app contains one third-party component: RevenueCat, a purchase SDK used only to manage {app} PRO purchases and subscription status. What it receives is described in section 7. It never receives health, motion or location data.",
+          "{app} has no user accounts, no ads, and no analytics or tracking. The developer does not receive your walks, routes, heart-rate data, motion activity, location or anything else you see in the app. The one exception is optional: if you create or join a competition, the display name you typed and your step total for the days of the competition are stored in Apple's iCloud and shown to the members of that competition, as described in section 8.",
+          "The app contains one third-party component: RevenueCat, a purchase SDK used only to manage {app} PRO purchases and subscription status. What it receives is described in section 7. It never receives health, motion or location data. The app also uses Apple's iCloud (CloudKit) for competitions and iCloud Sync, as described in sections 8 and 9. iCloud is used only if you are signed in to iCloud on your iPhone.",
         ],
       },
       {
         title: "2. What the app reads from Apple Health",
         paragraphs: [
           "With your permission, {app} reads the following from Apple Health: steps, distance, energy burned, flights climbed, exercise time, heart rate, resting heart rate, walking heart rate average, walking metrics (walking speed, step length, walking asymmetry and double support time), walking steadiness, cardio fitness (VO₂ max), six-minute walk distance, workouts and workout routes.",
-          "This data is only used to show your day, your history, your heart-rate zones, your trends, your walking analysis and your personal suggestions inside the app. It is processed on your iPhone, is never sent to the developer or anyone else, and is never used for advertising.",
+          "This data is only used to show your day, your history, your heart-rate zones, your trends, your walking analysis and your personal suggestions inside the app. It is processed on your iPhone and is never used for advertising. It is not sent to the developer or anyone else; the only exception is the step total shared in a competition you take part in (section 8).",
         ],
       },
       {
@@ -86,26 +86,42 @@ export const en: BaseDictionary = {
         ],
       },
       {
-        title: "8. Where your data is stored",
+        title: "8. Competitions",
         paragraphs: [
-          "Your health, motion and location data stays on your device and in Apple Health. {app} has no servers and no cloud sync of its own. Data in Apple Health is managed by you in the Health app and is covered by Apple's privacy policy. Purchase information is held by Apple and by RevenueCat as described in section 7.",
+          "Competitions are optional. You can create a competition, or join one with a six-character code or an invitation link. The host accepts each person who asks to join. Competitions need iCloud: they work only if you are signed in to iCloud on your iPhone.",
+          "For a competition you host or join, the app stores the following in Apple's iCloud (CloudKit, in the app's public database): the competition's name, its dates and its step goal, the display name you typed, and your total step count for the days of the competition, which is updated while the competition runs. Members of a competition see each other's display name and step total. If you ask to join a competition, your display name is stored so that the host can accept or decline.",
+          "No heart rate, location, routes, walks or other health data is shared. Records are identified by an anonymous iCloud user identifier; the developer does not get your Apple Account (Apple ID), email address or name from iCloud. The developer runs no server of their own; this data is held by Apple's iCloud.",
+          "Records in the public database can be read by anyone who knows a competition's code, so the code works like a private link. Share it only with the people you want in the competition.",
+          "The host can delete a competition in the app, which removes it for everyone. If you leave a competition, it is removed from your app; your last reported step total may remain in iCloud until the competition is deleted. To have it removed, write to {email}.",
         ],
       },
       {
-        title: "9. Your choices",
+        title: "9. iCloud Sync",
         paragraphs: [
-          "You decide which Apple Health data {app} may read or write, and whether it may use location and Motion & Fitness data. You can change these permissions at any time in the Settings and Health apps. Subscriptions are managed and cancelled in your App Store account settings.",
-          "Deleting the app removes the data it stores on your iPhone, including the daily motion summaries. The start date of the free week is kept, so that reinstalling the app does not restart it. Data in Apple Health stays until you delete it there.",
+          "iCloud Sync is on by default and can be turned off in the app's Settings. It keeps your daily goal, units, medals earned, display name and the list of competitions you have joined the same across your own devices, through your private iCloud key-value storage. Only you can read it. It is used only if you are signed in to iCloud on your iPhone.",
         ],
       },
       {
-        title: "10. Children",
+        title: "10. Where your data is stored",
+        paragraphs: [
+          "Your health, motion and location data stays on your device and in Apple Health. The developer runs no server of their own. Competition data is held in Apple's iCloud (CloudKit) as described in section 8, and synced settings in your private iCloud storage as described in section 9. Data in Apple Health is managed by you in the Health app. Data in Apple Health and in iCloud is covered by Apple's privacy policy. Purchase information is held by Apple and by RevenueCat as described in section 7.",
+        ],
+      },
+      {
+        title: "11. Your choices and deleting your data",
+        paragraphs: [
+          "You decide which Apple Health data {app} may read or write, and whether it may use location and Motion & Fitness data. You can change these permissions at any time in the Settings and Health apps. Competitions are optional, and iCloud Sync can be turned off in the app's Settings. Subscriptions are managed and cancelled in your App Store account settings.",
+          "Deleting the app removes the data it stores on your iPhone, including the daily motion summaries. The start date of the free week is kept, so that reinstalling the app does not restart it. Data in Apple Health stays until you delete it there. Deleting the app does not delete a competition you host from iCloud: delete it in the app first. To have your data removed from a competition you have left, write to {email}.",
+        ],
+      },
+      {
+        title: "12. Children",
         paragraphs: [
           "{app} is not directed at children under 13 and does not knowingly collect personal data from them.",
         ],
       },
       {
-        title: "11. Changes and contact",
+        title: "13. Changes and contact",
         paragraphs: [
           "If this policy changes, we will update this page and the date above. Questions? Write to {email}.",
         ],
@@ -147,7 +163,7 @@ export const en: BaseDictionary = {
       {
         title: "5. Your data",
         paragraphs: [
-          "Your data belongs to you. Your health, motion and location data stays on your device and in Apple Health, and you manage it there. How {app} handles it, and what purchase information is processed, is described in the Privacy Policy.",
+          "Your data belongs to you. Your health, motion and location data stays on your device and in Apple Health, and you manage it there. If you use competitions or iCloud Sync, the information described in the Privacy Policy is stored in Apple's iCloud. How {app} handles your data, and what purchase information is processed, is described in the Privacy Policy.",
         ],
       },
       {
