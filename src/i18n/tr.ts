@@ -2,14 +2,14 @@ import type { BaseDictionary } from "./types";
 
 export const tr: BaseDictionary = {
   meta: {
-    title: "{app} – iPhone için Adımsayar ve Yürüyüş Takibi",
+    title: "{app} – Şehrini Yürüyerek Keşfet",
     description:
-      "{app} adımlarını sayar, yürüyüşlerini canlı haritada takip eder; nabız bölgelerini, yürüyüş analizini ve iPhone'unda hesaplanan kişisel önerileri gösterir. Hesap yok, reklam yok, analiz yok.",
+      "{app} yürümeyi keşfe dönüştürür: şehrin sisle kaplı başlar, her yürüyüş sisi dağıtır; yanından geçtiğin simge yapılar, müzeler, kaleler ve parklar koleksiyonuna girer ve kupa kazandırır. Hesap yok, reklam yok, takip yok.",
   },
   nav: {
     features: "Özellikler",
-    walks: "Yürüyüşler",
-    trends: "Eğilimler",
+    explore: "Keşif",
+    collection: "Koleksiyon",
     pro: "PRO",
     privacy: "Gizlilik",
     faq: "SSS",
@@ -21,46 +21,47 @@ export const tr: BaseDictionary = {
   },
   appStore: { small: "App Store'dan", large: "İndir", soonSmall: "Çok yakında", soonLarge: "App Store'da" },
   footer: {
-    tagline: "iPhone için sade ve gizliliğe saygılı adımsayar ve yürüyüş takipçisi. Apple Sağlık ile bağlantılı.",
+    tagline: "Şehrinin haritasındaki sisi dağıt, görülmeye değer yerleri topla, kupaları kazan; her seferinde bir yürüyüşle. iPhone ve Apple Watch için.",
     product: "Ürün",
     legal: "Yasal",
     privacy: "Gizlilik Politikası",
     terms: "Kullanım Koşulları",
     support: "Destek",
     rights: "Tüm hakları saklıdır.",
-    trademarks: "Apple, iPhone, Apple Watch ve App Store, Apple Inc. şirketinin ticari markalarıdır.",
+    trademarks: "Apple, iPhone, Apple Watch, Apple Haritalar ve App Store, Apple Inc. şirketinin ticari markalarıdır.",
   },
   legal: {
-    updated: "Son güncelleme: 12 Kasım 2026",
+    updated: "Son güncelleme: 16 Kasım 2026",
     back: "Ana sayfaya dön",
     privacyTitle: "Gizlilik Politikası",
     privacyIntro:
-      "Bu politika, {developer} tarafından geliştirilen {app} adlı iPhone uygulamasının (“{app}”, “uygulama”) bilgilerinizi nasıl ele aldığını açıklar. Kısacası: sağlık, hareket ve konum verileriniz iPhone'unuzda ve Apple Sağlık'ta kalır. Uygulamada hesap, reklam ve analiz yoktur. Cihazınızdan yalnızca üç durumda bilgi çıkar: {app} PRO satın alma bilgileri (7. bölüm); bir yarışma oluşturur ya da bir yarışmaya katılırsanız, Apple'ın iCloud'unda saklanan ve yarışmanın üyelerine gösterilen görünen adınız ile o yarışmadaki adım toplamınız (8. bölüm); ve birkaç ayarı kendi cihazlarınız arasında, size özel iCloud saklama alanınızda aynı tutan iCloud Eşitleme (9. bölüm).",
+      "Bu politika, {developer} tarafından geliştirilen {app} adlı iPhone ve Apple Watch uygulamasının (“{app}”, “uygulama”) bilgilerinizi nasıl ele aldığını açıklar. Kısacası: yürüyüşleriniz, rotalarınız, keşfettiğiniz harita, koleksiyonunuz, sağlık, hareket ve konum verileriniz cihazınızda ve Apple Sağlık'ta kalır. Uygulamada hesap, reklam ve analiz yoktur; geliştiricinin bir sunucusu yoktur. Cihazınızdan yalnızca şu durumlarda bilgi çıkar: görülecek yerleri ve yürüme rotalarını bulmak için uygulama, ilgili harita bölgesini Apple'ın harita hizmetine sorar (6. bölüm); {app} PRO satın alma bilgileri (9. bölüm); bir yarışma oluşturur ya da bir yarışmaya katılırsanız, Apple'ın iCloud'unda saklanan ve yarışmanın üyelerine gösterilen görünen adınız ve o yarışmadaki puanınız (10. bölüm); ve birkaç ayarı kendi cihazlarınız arasında, size özel iCloud saklama alanınızda aynı tutan iCloud Eşitleme (11. bölüm).",
     privacySections: [
       {
         title: "1. Topladığımız veriler",
         paragraphs: [
-          "{app} uygulamasında kullanıcı hesabı, reklam, analiz ve izleme yoktur. Geliştirici; yürüyüşlerinize, rotalarınıza, nabız verilerinize, hareket aktivitenize, konumunuza veya uygulamada gördüğünüz başka hiçbir bilgiye erişmez. Tek istisna isteğe bağlıdır: bir yarışma oluşturur ya da bir yarışmaya katılırsanız, yazdığınız görünen ad ve yarışma günlerindeki adım toplamınız, 8. bölümde açıklandığı şekilde Apple'ın iCloud'unda saklanır ve o yarışmanın üyelerine gösterilir.",
-          "Uygulamada tek bir üçüncü taraf bileşen bulunur: yalnızca {app} PRO satın alımlarını ve abonelik durumunu yönetmek için kullanılan satın alma SDK'sı RevenueCat. RevenueCat'e iletilen bilgiler 7. bölümde açıklanır. Sağlık, hareket ve konum verileri RevenueCat'e asla iletilmez. Uygulama ayrıca, 8. ve 9. bölümlerde açıklandığı şekilde yarışmalar ve iCloud Eşitleme için Apple'ın iCloud'unu (CloudKit) kullanır. iCloud yalnızca iPhone'unuzda iCloud'a giriş yaptıysanız kullanılır.",
+          "{app} uygulamasında kullanıcı hesabı, reklam, analiz ve izleme yoktur. Geliştirici; yürüyüşlerinize, rotalarınıza, keşfettiğiniz haritaya, topladığınız yerlere, nabız verilerinize, hareket aktivitenize, konumunuza veya uygulamada gördüğünüz başka hiçbir bilgiye erişmez. Tek istisna isteğe bağlıdır: bir yarışma oluşturur ya da bir yarışmaya katılırsanız, yazdığınız görünen ad ve yarışma günlerindeki puanınız, 10. bölümde açıklandığı şekilde Apple'ın iCloud'unda saklanır ve o yarışmanın üyelerine gösterilir.",
+          "Uygulamada tek bir üçüncü taraf bileşen bulunur: yalnızca {app} PRO satın alımlarını ve abonelik durumunu yönetmek için kullanılan satın alma SDK'sı RevenueCat (9. bölüm). Sağlık, hareket ve konum verileri RevenueCat'e asla iletilmez. Uygulama ayrıca Apple'ın sunduğu hizmetleri kullanır: Apple Sağlık, görülecek yerler ve yürüme rotaları için Apple'ın harita hizmeti (MapKit, 6. bölüm) ve yarışmalar ile iCloud Eşitleme için iCloud (CloudKit, 10. ve 11. bölümler). Başka hiçbir yer, harita veya analiz hizmeti kullanılmaz.",
         ],
       },
       {
         title: "2. Uygulamanın Apple Sağlık'tan okudukları",
         paragraphs: [
-          "{app}, izniniz dahilinde Apple Sağlık'tan şu verileri okur: adımlar, mesafe, harcanan enerji, çıkılan katlar, egzersiz süresi, nabız, dinlenme nabzı, yürüme nabzı ortalaması, yürüme ölçümleri (yürüme hızı, adım uzunluğu, yürüme asimetrisi ve çift destek süresi), yürüme dengesi, kardiyo kondisyonu (VO₂ max), altı dakika yürüyüş mesafesi, antrenmanlar ve antrenman rotaları.",
-          "Bu veriler yalnızca gününüzü, geçmişinizi, nabız bölgelerinizi, eğilimlerinizi, yürüyüş analizinizi ve kişisel önerilerinizi uygulama içinde göstermek için kullanılır. iPhone'unuzda işlenir ve reklam amacıyla asla kullanılmaz. Geliştiriciye ya da başka birine gönderilmez; tek istisna, katıldığınız bir yarışmada paylaşılan adım toplamınızdır (8. bölüm).",
+          "{app}, izniniz dahilinde Apple Sağlık'tan şu verileri okur: antrenmanlar ve antrenman rotaları, adımlar, mesafe, aktif enerji, çıkılan katlar, egzersiz süresi, nabız, dinlenme nabzı, yürüme nabzı ortalaması, yürüme ölçümleri (yürüme hızı, adım uzunluğu, yürüme asimetrisi ve çift destek süresi), yürüme dengesi, kardiyo kondisyonu (VO₂ max), altı dakika yürüyüş mesafesi ve yalnızca nabız bölgeleri için maksimum nabzınızı tahmin etmekte kullanılan doğum tarihiniz.",
+          "Yürüyüşlerinizin ve doğa yürüyüşlerinizin rotaları, haritanızı açmak ve yanından geçtiğiniz yerleri bulmak için kullanılır (7. bölüm). Diğer veriler gününüzü, geçmişinizi, eğilimlerinizi, nabız bölgelerinizi, yürüyüş analizinizi ve kişisel önerilerinizi göstermek için kullanılır. Hepsi cihazınızda işlenir ve reklam amacıyla asla kullanılmaz. Geliştiriciye ya da başka birine gönderilmez; tek istisna, katıldığınız bir yarışmada paylaşılan puanınızdır (10. bölüm).",
         ],
       },
       {
         title: "3. Uygulamanın Apple Sağlık'a yazdıkları",
         paragraphs: [
-          "Bir yürüyüş kaydettiğinizde {app}, bunu rotasıyla birlikte yürüyüş antrenmanı olarak Apple Sağlık'a kaydeder. Başka hiçbir şey yazılmaz. Bu antrenmanları dilediğiniz zaman Sağlık uygulamasında görebilir ve silebilirsiniz.",
+          "Uygulamada veya Apple Watch'ta bir yürüyüş kaydettiğinizde {app}, bunu rotası ve mesafesiyle birlikte yürüyüş antrenmanı olarak Apple Sağlık'a kaydeder. Başka hiçbir şey yazılmaz. Bu antrenmanları dilediğiniz zaman Sağlık uygulamasında görebilir ve silebilirsiniz.",
         ],
       },
       {
         title: "4. Konum",
         paragraphs: [
-          "{app}, konumunuzu yalnızca bir yürüyüş kaydedilirken, rotayı haritada çizmek ve yürüyüşü ölçmek için kullanır. Rota, antrenmanla birlikte Apple Sağlık'a kaydedilir. Konumunuz başka hiçbir zaman kullanılmaz; geliştiriciye ya da başka birine asla gönderilmez.",
+          "{app}, uygulamayı kullanırken konum erişimi ister (“Uygulamayı Kullanırken”). Konumunuzu yürüyüşleri kaydetmek ve rotalarını çizmek, ayrıca haritada nerede olduğunuzu ve yakınınızdaki yerleri göstermek için kullanır. Başlattığınız bir yürüyüş sırasında ekranı kilitlerseniz, uygulama yürüyüşü bitirene kadar rotasını arka planda kaydetmeye devam eder. Bunun dışında arka planda hiçbir zaman konum takibi yapılmaz.",
+          "Konumunuz geliştiriciye asla gönderilmez. Yakınınızdaki yerleri ve yürüme rotalarını bulmak için ilgili harita bölgesi veya koordinatlar, 6. bölümde açıklandığı şekilde Apple'a gönderilir.",
         ],
       },
       {
@@ -71,57 +72,70 @@ export const tr: BaseDictionary = {
         ],
       },
       {
-        title: "6. Kişisel öneriler ve Apple Intelligence",
+        title: "6. Görülecek yerler, yürüme rotaları ve Apple Haritalar",
         paragraphs: [
-          "“Sana Özel” bölümündeki öneriler, kendi verilerinizden iPhone'unuzda hesaplanır. Apple Intelligence destekli iPhone'larda (iOS 26 veya sonrası) “Haftan Birkaç Cümlede”, Apple'ın cihaz üzerindeki modelinin bu verilerden, cihazınızda yazdığı kısa bir özettir. Önerileri ya da özetleri oluşturmak için geliştiriciye ya da başka birine hiçbir veri gönderilmez.",
+          "{app}, görülmeye değer yerleri (simge yapılar ve anıtlar, müzeler, kaleler ve hisarlar, tiyatrolar ve planetaryumlar, kütüphaneler ve parklar) bulmak için Apple'ın MapKit ilgi noktası aramasını; bir yere yürüme rotası çizmek veya gezi turu planlamak için MapKit yürüme yol tarifini; en çok yürüdüğünüz bölgelere ad vermek için de Apple'ın konum adlandırma (geocoding) hizmetini kullanır. Bu istekler cihazınızdan doğrudan Apple'a gider ve ilgili harita bölgesini veya koordinatları içerir; örneğin yürüyüşlerinizin çevresindeki bölge ya da bir rotanın başlangıç ve bitiş noktası. Bu istekler Apple tarafından, Apple'ın gizlilik politikası kapsamında işlenir (https://www.apple.com/legal/privacy/).",
+          "“Bu Yer Hakkında”, bir yer için Apple Haritalar'ın kendi yer kartını gösterir; içeriği Apple'dan gelir. Geliştirici bu isteklerin ya da sonuçlarının hiçbirini almaz. Yer sonuçları ve bölge adları yalnızca cihazınızda önbelleğe alınır. {app} başka hiçbir yer veya harita hizmeti kullanmaz.",
+        ],
+      },
+      {
+        title: "7. Keşfettiğiniz harita ve koleksiyonunuz",
+        paragraphs: [
+          "Haritada açtığınız alanlar, bölgeleriniz, her yürüyüşün yeni alanı, topladığınız yerler, kupalarınız ve madalyalarınız; Apple Sağlık'taki rotalardan ve Apple Haritalar ile bulunan yerlerden cihazınızda hesaplanır. Yalnızca cihazınızda saklanır; geliştiriciye ya da başka birine asla gönderilmez. Tek istisna, katıldığınız bir yarışmadaki puanınızdır (10. bölüm).",
+        ],
+      },
+      {
+        title: "8. Kişisel öneriler ve Apple Intelligence",
+        paragraphs: [
+          "Kişisel öneriler ({app} PRO), kendi verilerinizden iPhone'unuzda hesaplanır. Apple Intelligence destekli iPhone'larda (iOS 26 veya sonrası) “Haftan Birkaç Cümlede”, Apple'ın cihaz üzerindeki modelinin bu verilerden, cihazınızda yazdığı kısa bir özettir. Önerileri ya da özetleri oluşturmak için geliştiriciye ya da başka birine hiçbir veri gönderilmez.",
           "Öneriler ve özetler genel sağlıklı yaşam bilgisidir; tıbbi tavsiye değildir.",
         ],
       },
       {
-        title: "7. Satın alımlar ve RevenueCat",
+        title: "9. Satın alımlar ve RevenueCat",
         paragraphs: [
           "{app} PRO, uygulama içi satın alma olarak sunulur: otomatik yenilenen abonelik ya da tek seferlik satın alma. Satın alımlar, Apple Hesabınız üzerinden Apple tarafından işlenir. Ödeme bilgileriniz geliştiriciye asla ulaşmaz. Apple'ın satın alımınızla ilgili işlemleri için Apple'ın gizlilik politikası geçerlidir.",
-          "Uygulama, PRO'nun cihazınızda etkin olup olmadığını bilmek için üçüncü taraf bir satın alma SDK'sı olan RevenueCat'i kullanır. RevenueCat, satın alma ve işlem bilgilerini ve anonim bir uygulama kullanıcı kimliğini alır. Uygulamadan adınızı ya da e-posta adresinizi almaz; sağlık, hareket ve konum verilerini ise asla almaz. Uygulama, RevenueCat'i reklam ya da izleme amacıyla kullanmaz. RevenueCat'in gizlilik politikası: https://www.revenuecat.com/privacy",
-          "Ücretsiz ilk PRO haftası için ödeme ve kayıt gerekmez. Haftanın başladığı tarih iPhone'unuzda saklanır.",
+          "Uygulama, PRO'nun cihazınızda etkin olup olmadığını bilmek için üçüncü taraf bir satın alma SDK'sı olan RevenueCat'i kullanır. RevenueCat, satın alma ve işlem bilgilerini ve anonim bir uygulama kullanıcı kimliğini alır. Uygulamadan adınızı ya da e-posta adresinizi almaz; sağlık, hareket, konum ve harita verilerini ise asla almaz. Uygulama, RevenueCat'i reklam ya da izleme amacıyla kullanmaz. RevenueCat'in gizlilik politikası: https://www.revenuecat.com/privacy",
+          "Hoş geldin teklifinin gösterilip gösterilmediği ve ne zaman sona ereceği cihazınızda saklanır.",
         ],
       },
       {
-        title: "8. Yarışmalar",
+        title: "10. Yarışmalar",
         paragraphs: [
           "Yarışmalar isteğe bağlıdır. Bir yarışma oluşturabilir ya da altı karakterli bir kodla veya davet bağlantısıyla bir yarışmaya katılabilirsiniz. Katılmak isteyen her kişiyi yarışmayı kuran kişi kabul eder. Yarışmalar için iCloud gerekir: yalnızca iPhone'unuzda iCloud'a giriş yaptıysanız çalışır.",
-          "Kurduğunuz ya da katıldığınız bir yarışma için uygulama, Apple'ın iCloud'unda (CloudKit, uygulamanın genel “public” veritabanı) şunları saklar: yarışmanın adı, tarihleri ve adım hedefi, yazdığınız görünen ad ve yarışma günlerindeki toplam adım sayınız; bu sayı yarışma sürerken güncellenir. Bir yarışmanın üyeleri birbirlerinin görünen adını ve adım toplamını görür. Bir yarışmaya katılmak istediğinizde, yarışmayı kuran kişinin isteğinizi kabul ya da reddedebilmesi için görünen adınız saklanır.",
-          "Nabız, konum, rota, yürüyüş ya da başka hiçbir sağlık verisi paylaşılmaz. Kayıtlar anonim bir iCloud kullanıcı tanımlayıcısıyla ilişkilendirilir; geliştirici iCloud'dan Apple Hesabınızı (Apple ID), e-posta adresinizi ya da adınızı almaz. Geliştiricinin kendine ait bir sunucusu yoktur; bu veriler Apple'ın iCloud'unda tutulur.",
+          "Bir yarışma ya adımları ya da yeni alanı sayar: bir üyenin yarışma günlerinde açtığı ve daha önce hiç yürümediği alan, metrekare olarak. Kurduğunuz ya da katıldığınız bir yarışma için uygulama, Apple'ın iCloud'unda (CloudKit, uygulamanın genel “public” veritabanı) şunları saklar: yarışmanın adı, tarihleri, neyi saydığı ve hedefi, yazdığınız görünen ad ve yarışma günlerindeki puanınız (adım toplamınız veya metrekare cinsinden yeni alanınız); puan, yarışma sürerken güncellenir. Bir yarışmanın üyeleri birbirlerinin görünen adını ve puanını görür. Bir yarışmaya katılmak istediğinizde, yarışmayı kuran kişinin isteğinizi kabul ya da reddedebilmesi için görünen adınız saklanır.",
+          "Rota, konum, yer, yürüyüş, nabız ya da başka hiçbir sağlık verisi paylaşılmaz; yalnızca toplam paylaşılır. Kayıtlar anonim bir iCloud kullanıcı tanımlayıcısıyla ilişkilendirilir; geliştirici iCloud'dan Apple Hesabınızı (Apple ID), e-posta adresinizi ya da adınızı almaz. Geliştiricinin kendine ait bir sunucusu yoktur; bu veriler Apple'ın iCloud'unda tutulur.",
           "Genel veritabanındaki kayıtlar, bir yarışmanın kodunu bilen herkes tarafından okunabilir; yani kod, özel bir bağlantı gibi çalışır. Kodu yalnızca yarışmada olmasını istediğiniz kişilerle paylaşın.",
-          "Yarışmayı kuran kişi yarışmayı uygulamadan silebilir; bu, yarışmayı herkes için kaldırır. Bir yarışmadan ayrıldığınızda yarışma uygulamanızdan kaldırılır; bildirilen son adım toplamınız ise yarışma silinene kadar iCloud'da kalabilir. Kaldırılmasını isterseniz {email} adresine yazın.",
+          "Yarışmayı kuran kişi yarışmayı uygulamadan silebilir; bu, yarışmayı herkes için kaldırır. Bir yarışmadan ayrıldığınızda yarışma uygulamanızdan kaldırılır; bildirilen son puanınız ise yarışma silinene kadar iCloud'da kalabilir. Kaldırılmasını isterseniz {email} adresine yazın.",
         ],
       },
       {
-        title: "9. iCloud Eşitleme",
+        title: "11. iCloud Eşitleme",
         paragraphs: [
-          "iCloud Eşitleme varsayılan olarak açıktır ve uygulamanın Ayarlar bölümünden kapatılabilir. Günlük hedefinizi, birimlerinizi, kazandığınız madalyaları, görünen adınızı ve katıldığınız yarışmaların listesini, size özel iCloud anahtar-değer saklama alanınız aracılığıyla kendi cihazlarınız arasında aynı tutar. Bu bilgileri yalnızca siz okuyabilirsiniz. Yalnızca iPhone'unuzda iCloud'a giriş yaptıysanız kullanılır.",
+          "iCloud Eşitleme varsayılan olarak açıktır ve uygulamanın Ayarlar bölümünden kapatılabilir. Günlük hedefinizi, birimlerinizi, maksimum nabız ayarınızı, kazandığınız madalyaları, yarışma sonuçlarınızı, görünen adınızı ve katıldığınız yarışmaların listesini, size özel iCloud anahtar-değer saklama alanınız aracılığıyla kendi cihazlarınız arasında aynı tutar. Bu bilgileri yalnızca siz okuyabilirsiniz. Keşfettiğiniz harita ve koleksiyonunuz eşitlenmez. iCloud Eşitleme yalnızca iPhone'unuzda iCloud'a giriş yaptıysanız kullanılır.",
         ],
       },
       {
-        title: "10. Verilerinizin saklandığı yer",
+        title: "12. Verilerinizin saklandığı yer",
         paragraphs: [
-          "Sağlık, hareket ve konum verileriniz cihazınızda ve Apple Sağlık'ta kalır. Geliştiricinin kendine ait bir sunucusu yoktur. Yarışma verileri 8. bölümde açıklandığı şekilde Apple'ın iCloud'unda (CloudKit), eşzamanlanan ayarlar ise 9. bölümde açıklandığı şekilde size özel iCloud saklama alanınızda tutulur. Apple Sağlık'taki verileri Sağlık uygulamasından siz yönetirsiniz. Apple Sağlık'taki ve iCloud'daki veriler için Apple'ın gizlilik politikası geçerlidir. Satın alma bilgileri, 7. bölümde açıklandığı şekilde Apple ve RevenueCat tarafından tutulur.",
+          "Keşfettiğiniz harita, koleksiyonunuz, sağlık, hareket ve konum verileriniz cihazınızda ve Apple Sağlık'ta kalır. Geliştiricinin kendine ait bir sunucusu yoktur. Görülecek yer ve yürüme rotası istekleri 6. bölümde açıklandığı şekilde Apple tarafından işlenir. Yarışma verileri 10. bölümde açıklandığı şekilde Apple'ın iCloud'unda (CloudKit), eşitlenen ayarlar ise 11. bölümde açıklandığı şekilde size özel iCloud saklama alanınızda tutulur. Apple Sağlık'taki verileri Sağlık uygulamasından siz yönetirsiniz. Apple Sağlık, Apple'ın harita hizmeti ve iCloud'daki veriler için Apple'ın gizlilik politikası geçerlidir. Satın alma bilgileri, 9. bölümde açıklandığı şekilde Apple ve RevenueCat tarafından tutulur.",
         ],
       },
       {
-        title: "11. Tercihleriniz ve verilerinizin silinmesi",
+        title: "13. Tercihleriniz ve verilerinizin silinmesi",
         paragraphs: [
-          "{app} uygulamasının hangi Apple Sağlık verilerini okuyup yazabileceğine, konum ile Hareket ve Fitness verilerini kullanıp kullanamayacağına siz karar verirsiniz. Bu izinleri dilediğiniz zaman Ayarlar ve Sağlık uygulamalarından değiştirebilirsiniz. Yarışmalar isteğe bağlıdır; iCloud Eşitleme'yı uygulamanın Ayarlar bölümünden kapatabilirsiniz. Abonelikler, App Store hesap ayarlarınızdan yönetilir ve iptal edilir.",
-          "Uygulamayı sildiğinizde, günlük hareket özetleri dahil iPhone'unuzda sakladığı veriler de silinir. Ücretsiz haftanın başlangıç tarihi ise, uygulamayı yeniden yüklemek haftayı baştan başlatmasın diye saklanmaya devam eder. Apple Sağlık'taki veriler siz silene kadar orada kalır. Uygulamayı silmek, kurduğunuz bir yarışmayı iCloud'dan silmez: yarışmayı önce uygulamadan silin. Ayrıldığınız bir yarışmadaki verilerinizin kaldırılması için {email} adresine yazın.",
+          "{app} uygulamasının hangi Apple Sağlık verilerini okuyup yazabileceğine, konum ile Hareket ve Fitness verilerini kullanıp kullanamayacağına siz karar verirsiniz. Bu izinleri dilediğiniz zaman Ayarlar ve Sağlık uygulamalarından değiştirebilirsiniz. Yarışmalar isteğe bağlıdır; iCloud Eşitleme'yi uygulamanın Ayarlar bölümünden kapatabilirsiniz. Abonelikler, App Store hesap ayarlarınızdan yönetilir ve iptal edilir.",
+          "Uygulamayı sildiğinizde, keşfettiğiniz harita, koleksiyonunuz, önbelleğe alınmış yerler ve günlük hareket özetleri dahil cihazınızda sakladığı veriler silinir. Yürüyüşleriniz ve rotaları, siz orada silene kadar Apple Sağlık'ta kalır. Uygulamayı silmek, kurduğunuz bir yarışmayı iCloud'dan silmez: yarışmayı önce uygulamadan silin. Ayrıldığınız bir yarışmadaki verilerinizin kaldırılması için {email} adresine yazın.",
         ],
       },
       {
-        title: "12. Çocuklar",
+        title: "14. Çocuklar",
         paragraphs: [
           "{app}, 13 yaşın altındaki çocuklara yönelik değildir ve onlardan bilerek kişisel veri toplamaz.",
         ],
       },
       {
-        title: "13. Değişiklikler ve iletişim",
+        title: "15. Değişiklikler ve iletişim",
         paragraphs: [
           "Bu politika değişirse bu sayfayı ve yukarıdaki tarihi güncelleriz. Sorularınız için: {email}.",
         ],
@@ -140,8 +154,9 @@ export const tr: BaseDictionary = {
       {
         title: "2. {app} PRO, abonelikler ve satın alımlar",
         paragraphs: [
-          "{app} uygulamasının temel özellikleri ücretsizdir. {app} PRO; kişisel önerileri, yürüyüş analizini, hareket analizini ve yürüme ölçümlerini ekler. Her yeni kurulumda tüm PRO özellikleri ilk hafta boyunca ücretsizdir. Ücretsiz hafta için ödeme ve kayıt gerekmez; hafta bittiğinde kendiliğinden ücretli bir plana dönüşmez.",
-          "Ücretsiz haftadan sonra PRO; yıllık, aylık veya haftalık otomatik yenilenen abonelik ya da tek seferlik ömür boyu satın alma olarak sunulur. Her planın fiyatı, satın almadan önce uygulamada gösterilir. Ödeme, satın almayı onayladığınızda Apple Hesabınızdan tahsil edilir.",
+          "{app} uygulamasının temel özellikleri ücretsizdir: sis haritası ve bölgeler, görülecek yerler, koleksiyonunuz ve kupalarınız, yakındaki öneriler ve bir yere yürüme rotası, yarışmalar, madalyalar, adımlar ve yürüyüş kaydı. {app} PRO; gezi turlarını, keşif zaman tünelini, kişisel önerileri, yürüyüş analizini, hareket analizini ve yürüme ölçümlerini ekler. Ücretsiz deneme sunulmaz.",
+          "PRO; yıllık, 3 aylık, aylık veya haftalık otomatik yenilenen abonelik ya da tek seferlik ömür boyu satın alma olarak sunulur. Her planın fiyatı, satın almadan önce uygulamada gösterilir. Ödeme, satın almayı onayladığınızda Apple Hesabınızdan tahsil edilir.",
+          "Hoş geldin teklifi: kurulumdan sonra uygulama PRO planlarını bir kez gösterir. Satın almadan kapatırsanız, bir kerelik bir hoş geldin teklifi gösterilebilir: 24 saat boyunca geçerli, indirimli 3 aylık abonelik. Teklif yalnızca bir kez gösterilir ve yeniden başlatılamaz. Teklif otomatik yenilenen bir aboneliktir: iptal etmediğiniz sürece, satın almadan önce teklifte gösterilen yenileme fiyatı üzerinden 3 ayda bir yenilenir.",
           "Abonelikler, siz iptal edene kadar her dönemin sonunda gösterilen fiyat üzerinden otomatik olarak yenilenir. Bir sonraki dönem için ücretlendirilmemek için, içinde bulunduğunuz dönemin bitiminden en az 24 saat önce iptal edin. Aboneliğinizi dilediğiniz zaman App Store hesap ayarlarınızdan yönetebilir ve iptal edebilirsiniz. Uygulamayı silmek aboneliği iptal etmez.",
           "Ömür boyu satın alma bir kez ödenir ve yenilenmez. Satın alımları Apple işler; iadeler Apple tarafından, Apple'ın kendi koşullarına göre yürütülür. Satın alımlarınızı, aynı Apple Hesabı ile giriş yapılmış bir cihazda uygulamadaki Satın Alımları Geri Yükle seçeneğiyle geri yükleyebilirsiniz. Tüm satın alımlar için Apple'ın Standart EULA'sı geçerlidir.",
         ],
@@ -149,21 +164,22 @@ export const tr: BaseDictionary = {
       {
         title: "3. Tıbbi cihaz değildir",
         paragraphs: [
-          "{app} bir fitness ve sağlıklı yaşam uygulamasıdır. Tıbbi cihaz değildir; tıbbi tavsiye, teşhis veya tedavi sunmaz. Adım, mesafe, kalori, nabız, nabız bölgeleri, yürüme ölçümleri, kondisyon göstergeleri ve hareket analizi iPhone'unuzun sensörlerinden ve Apple Sağlık'tan gelir; tahminidir ve hatalı olabilir.",
+          "{app} bir yürüyüş, keşif ve sağlıklı yaşam uygulamasıdır. Tıbbi cihaz değildir; tıbbi tavsiye, teşhis veya tedavi sunmaz. Adım, mesafe, kalori, nabız, nabız bölgeleri, yürüme ölçümleri, kondisyon göstergeleri ve hareket analizi cihazınızın sensörlerinden ve Apple Sağlık'tan gelir; tahminidir ve hatalı olabilir.",
           "Kişisel öneriler ve Apple'ın cihaz üzerindeki modelinin yazdığı “Haftan Birkaç Cümlede” özeti, bu verilerden çıkarılan genel bilgilerdir. Hatalı olabilirler ve tıbbi tavsiye değildirler.",
           "Sağlığınızla ilgili kararları yalnızca uygulamaya dayanarak vermeyin. Yeni bir egzersiz programına başlamadan önce veya sağlığınızla ilgili bir endişeniz varsa doktorunuza danışın.",
         ],
       },
       {
-        title: "4. Güvenli yürüyün",
+        title: "4. Yerler, rotalar ve güvenli yürüyüş",
         paragraphs: [
+          "Görülecek yerler, yer bilgileri ve yürüme rotaları Apple Haritalar'dan gelir. Eksik, güncel olmayan veya hatalı olabilirler: bir yer kapalı, özel mülk, inşaat halinde ya da ziyarete kapalı olabilir; önerilen bir rota veya gezi turu güvenli ya da geçilebilir olmayabilir. Kendi değerlendirmenizi yapın, tabelalara, açılış saatlerine ve yerel kurallara uyun ve özel mülke girmeyin.",
           "Yürürken çevrenize dikkat edin. Güvenli olmadığı durumlarda telefonunuza bakmayın ve trafik kurallarına uyun.",
         ],
       },
       {
         title: "5. Verileriniz",
         paragraphs: [
-          "Verileriniz size aittir. Sağlık, hareket ve konum verileriniz cihazınızda ve Apple Sağlık'ta kalır; onları oradan siz yönetirsiniz. Yarışmaları ya da iCloud Eşitleme'yı kullanırsanız, Gizlilik Politikası'nda açıklanan bilgiler Apple'ın iCloud'unda saklanır. {app} uygulamasının verilerinizi nasıl ele aldığı ve hangi satın alma bilgilerinin işlendiği Gizlilik Politikası'nda açıklanır.",
+          "Verileriniz size aittir. Keşfettiğiniz harita, koleksiyonunuz, sağlık, hareket ve konum verileriniz cihazınızda ve Apple Sağlık'ta kalır; onları oradan siz yönetirsiniz. Yarışmaları ya da iCloud Eşitleme'yi kullanırsanız, Gizlilik Politikası'nda açıklanan bilgiler Apple'ın iCloud'unda saklanır. {app} uygulamasının verilerinizi nasıl ele aldığı, Apple'ın harita hizmetine nelerin gönderildiği ve hangi satın alma bilgilerinin işlendiği Gizlilik Politikası'nda açıklanır.",
         ],
       },
       {
@@ -178,8 +194,28 @@ export const tr: BaseDictionary = {
     title: "Destek",
     intro: "Bir şey çalışmıyor mu, yoksa {app} uygulamasını daha iyi yapacak bir fikriniz mi var? Sizden haber almak isteriz.",
     emailLabel: "Bize yazın",
-    emailHint: "Bir sorun bildiriyorsanız lütfen iPhone modelinizi ve iOS sürümünüzü belirtin. Sağlık verilerinizi bize göndermeniz asla gerekmez.",
+    emailHint: "Bir sorun bildiriyorsanız lütfen iPhone modelinizi ve iOS sürümünüzü belirtin. Sağlık verilerinizi veya rotalarınızı bize göndermeniz asla gerekmez.",
     topics: [
+      {
+        title: "Yürüyüşlerim sisi dağıtmıyor",
+        text: "Harita, Apple Sağlık'taki yürüyüşlerinizin rotalarından açılır. Sağlık uygulamasını açın, profil resminize › Uygulamalar › {app} yolunu izleyin ve Antrenmanlar ile Antrenman Rotaları'nı açın. Yalnızca rotası olan yürüyüşler sayılır: {app} uygulamasında, Apple Watch'ta veya rotayı kaydeden başka bir uygulamada kaydedilmiş açık hava yürüyüşleri ve doğa yürüyüşleri.",
+      },
+      {
+        title: "Haritada hiç yer görünmüyor",
+        text: "Görülecek yerler Apple Haritalar'da aranır; bu yüzden {app} bir bölgeye ilk kez bakarken internet bağlantısına ihtiyaç duyar. Simge yapılar ve anıtlar, müzeler, kaleler ve hisarlar, tiyatrolar ve planetaryumlar, kütüphaneler ve parklar gösterilir; bazı bölgelerde Apple Haritalar'da bunlardan az bulunur.",
+      },
+      {
+        title: "Bir yer koleksiyonuma eklenmedi",
+        text: "Bir yer, yürüyüşlerinizden birinin rotası yaklaşık 100 m yakınından geçtiğinde toplanır. Kapalı alan yürüyüşleri gibi rotası kaydedilmemiş yürüyüşler yer toplayamaz.",
+      },
+      {
+        title: "Konumum görünmüyor veya rota çizilmiyor",
+        text: "{app}, uygulamayı kullanırken konum erişimine ihtiyaç duyar. Ayarlar › Gizlilik ve Güvenlik › Konum Servisleri › {app} bölümünden “Uygulamayı Kullanırken” seçeneğine izin verin. Arka planda konum yalnızca başlattığınız bir yürüyüş sırasında kullanılır.",
+      },
+      {
+        title: "Yarışmalar çalışmıyor",
+        text: "Yarışmalar iCloud kullanır. Ayarlar uygulamasında iCloud'a giriş yaptığınızdan ve iPhone'unuzun internete bağlı olduğundan emin olun. Katılmak için altı karakterli kodu girin ya da davet bağlantısını açın, ardından yarışmayı kuran kişinin sizi kabul etmesini bekleyin.",
+      },
       {
         title: "Adımlar veya diğer veriler görünmüyor",
         text: "{app} uygulamasının Apple Sağlık'tan veri okuma iznine ihtiyacı vardır. Sağlık uygulamasını açın, profil resminize › Uygulamalar › {app} yolunu izleyin ve görmek istediğiniz verileri açın.",
@@ -189,20 +225,12 @@ export const tr: BaseDictionary = {
         text: "Ayarlar › Gizlilik ve Güvenlik › Hareket ve Fitness bölümünde {app} için erişime izin verildiğinden emin olun.",
       },
       {
-        title: "Hareket analizi boş",
-        text: "Hareket analizi için Hareket ve Fitness erişimi gerekir. {app} içinde Ayarlar › Hareket Analizi bölümünden ya da Ayarlar uygulamasında Gizlilik ve Güvenlik › Hareket ve Fitness bölümünden izin verin. Analiz iPhone'unuzda yapılır ve veriler cihazınızdan çıkmaz.",
-      },
-      {
-        title: "Rota çizilmiyor",
-        text: "Rota kaydı için konum erişimi gerekir. Ayarlar › Gizlilik ve Güvenlik › Konum Servisleri bölümünden {app} için izin verin. Konum yalnızca yürüyüş kaydedilirken kullanılır.",
-      },
-      {
-        title: "Nabız bölgeleri boş",
-        text: "Bölgeler, Apple Sağlık'taki nabız verilerinden hesaplanır. Apple Watch gibi bir cihaz nabzınızı kaydettiğinde görünür.",
-      },
-      {
         title: "PRO özellikleri kilitli",
-        text: "Her yeni kurulumda tüm PRO özellikleri ilk hafta boyunca ücretsizdir. Sonrasında bu özellikler için {app} PRO gerekir. Adımlar, geçmiş, yürüyüş kaydı, adım eğilimleri ve nabız bölgeleri ücretsiz kalır. PRO'yu daha önce satın aldıysanız satın alımınızı geri yükleyin.",
+        text: "Gezi turları, keşif zaman tüneli, kişisel öneriler, yürüyüş analizi, hareket analizi ve yürüme ölçümleri için {app} PRO gerekir. Ücretsiz deneme sunulmaz. Keşif, görülecek yerler, koleksiyon, kupalar, yarışmalar ve adımlar ücretsiz kalır. PRO'yu daha önce satın aldıysanız satın alımınızı geri yükleyin.",
+      },
+      {
+        title: "Hoş geldin teklifi nerede?",
+        text: "Hoş geldin teklifi, kurulumun sonunda gösterilen PRO planlarını satın almadan kapatırsanız bir kez çıkar. 24 saat sürer ve bitene kadar uygulamadaki kartından yeniden açılabilir. Sona erdikten sonra yeniden başlatılamaz.",
       },
       {
         title: "Satın alımları geri yükleme",
@@ -214,7 +242,7 @@ export const tr: BaseDictionary = {
       },
       {
         title: "“Haftan Birkaç Cümlede” görünmüyor",
-        text: "Yazılı özet için Apple Intelligence destekli (iOS 26 veya sonrası) ve Apple Intelligence'ın açık olduğu bir iPhone gerekir. “Sana Özel” bölümündeki diğer öneriler, desteklenen her iPhone'da çalışır.",
+        text: "Yazılı özet PRO'nun bir parçasıdır ve Apple Intelligence destekli (iOS 26 veya sonrası), Apple Intelligence'ın açık olduğu bir iPhone gerektirir. Diğer kişisel öneriler, desteklenen her iPhone'da çalışır.",
       },
     ],
   },

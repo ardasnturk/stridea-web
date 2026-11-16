@@ -1,5 +1,5 @@
 // Stroke icons (24×24, 2px), drawn in the style of SF Symbols.
-const PATHS = {
+export const ICON_PATHS = {
   walk: "M13.5 5.5a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM7 22l2.5-6.5M9.5 15.5 8.5 10l4-2 2.5 4 3.5 1.5M12.5 8 8.5 10l-1.5 3.5M11.5 13.5l3 3 1 5.5",
   heart: "M12 20.5S4 15.6 4 9.8A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 8 2.2c0 5.8-8 10.7-8 10.7Z",
   pulse: "M2 12h4.5l2.5-7 4.5 14 2.5-7H22",
@@ -38,15 +38,32 @@ const PATHS = {
   chair: "M7 3v10h10M7 13v8M17 13v8M5 13h14",
   trendUp: "M3 17l6-6 4 4 8-8M15 7h6v6",
   lock: "M6 11h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1ZM8 11V7a4 4 0 0 1 8 0v4",
+  map: "M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2ZM9 4v14M15 6v14",
+  trophy: "M7 4h10v4a5 5 0 0 1-10 0V4ZM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3M12 13v4M8 21h8M10 17h4v4h-4z",
+  medal: "M8 3h3l1 5M16 3h-3l-1 5M12 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM12 12.5l1 2 2 .3-1.5 1.4.4 2-1.9-1-1.9 1 .4-2L9 14.8l2-.3 1-2Z",
+  landmark: "M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 21h18M4 18h16",
+  palette: "M12 21a9 9 0 1 1 9-9c0 2.5-2 3.5-4 3.5h-1.5a1.5 1.5 0 0 0-1 2.6c.6.6.5 2.9-2.5 2.9ZM7.5 11h.01M10 7.5h.01M14.5 7.5h.01M17 11h.01",
+  castle: "M3 21V8h3v2h2V8h3v2h2V8h3v2h2V8h3v13H3ZM10 21v-4a2 2 0 0 1 4 0v4",
+  masks: "M4 5h16v6a8 8 0 0 1-16 0V5ZM9 9h.01M15 9h.01M9 14a4 4 0 0 0 6 0",
+  books: "M4 4h4v16H4zM8 6h4v14H8zM13.5 6.5l3.8-1 3.7 13.6-3.8 1z",
+  tree: "M12 22v-6M12 2 6 10h3l-4 6h14l-4-6h3l-6-8Z",
+  navigate: "M3 11l18-8-8 18-2-8-8-2Z",
+  info: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM12 11v5M12 8h.01",
+  hexagon: "M7.5 4h9L21 12l-4.5 8h-9L3 12l4.5-8Z",
+  users: "M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM2 21a7 7 0 0 1 14 0M16 3.5a4 4 0 0 1 0 7.5M18 14a6 6 0 0 1 4 7",
+  play: "M7 4l13 8-13 8V4Z",
+  widgets: "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z",
+  mountain: "M3 20 9.5 8l4 7 2.5-4L21 20H3Z",
+  cloud: "M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19.5 10 4 4 0 0 1 18 18H7Z",
 } as const;
 
-export type IconName = keyof typeof PATHS;
+export type IconName = keyof typeof ICON_PATHS;
 
 export function Icon({ name, className = "h-6 w-6" }: { name: IconName; className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}
       strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d={PATHS[name]} />
+      <path d={ICON_PATHS[name]} />
     </svg>
   );
 }

@@ -1,24 +1,39 @@
 # Stridea website
 
-Landing page, privacy policy, terms of use and support page for **Stridea**, the
-step-counter and walk-tracker app for iPhone, in English and Turkish. Live at
+Landing page, privacy policy, terms of use and support page for **Stridea**, the city
+walking and sightseeing app for iPhone (fog-of-war exploration map), in English and Turkish. Live at
 <https://stridea.ardasnturk.com/>.
 
-What the site presents, and what has to stay in step with the app:
+What the site presents, and what has to stay in step with the app
+(`../steps-app/README.md`, `docs/PRO.md`, `marketing/review-notes.md`):
 
-- **Free:** steps and daily goal, history, walk recording, step trends, heart-rate zones
-  and the heart-rate chart.
-- **PRO** (yearly / monthly / weekly subscription or a one-time lifetime purchase; every
-  new install gets all of it free for 7 days, no payment or sign-up): personal suggestions
-  ("For You", plus the on-device "Your Week in Words" summary on iPhones with Apple
-  Intelligence), walking analysis, motion analysis and walking metrics. PRO items carry
-  the `ProBadge` (`src/components/ProBadge.tsx`).
+- **The concept:** the person's city starts under fog; every walk (recorded in the app or on
+  Apple Watch, or a walk/hike with a route in Apple Health) clears about 100 m on each side of
+  its route. Hexagonal areas about 500 m across, orange from half uncovered; weekly new
+  ground; the nearest fog.
+- **Sights** from Apple Maps (landmarks and monuments, museums, castles and fortresses,
+  theatres and planetariums, libraries, parks) are collected when a walk passes within about
+  100 m; undiscovered ones are question marks on the map. A sight's card has its distance,
+  "Walk There" (walking route) and "About This Place" (Apple Maps place card); "Worth Seeing
+  Nearby" suggests the closest unseen ones.
+- **Awards › Collection:** a cup per category in four tiers (bronze 1, silver 10, gold 40,
+  platinum 120 sights) = 24 cups, the collected sights, the "New Discovery" celebration.
+  Also 35 medals and competitions (new ground or steps, via iCloud).
+- **Free:** everything above, plus the Today tab (steps, distance, heart rate, walks, history,
+  step trends, heart-rate zones) and widgets.
+- **PRO** (yearly / 3-month / monthly / weekly subscription or a one-time lifetime purchase):
+  sightseeing tours, exploration time-lapse, personal suggestions (with the on-device "Your
+  Week in Words" summary on iPhones with Apple Intelligence), walking analysis, motion
+  analysis and walking metrics. PRO items carry the `ProBadge` (`src/components/ProBadge.tsx`).
+- **No free trial.** New installs see the paywall once after onboarding; closing it starts a
+  one-time 24-hour welcome offer (the 3-month plan at a discount).
 - **No prices on the site.** The copy only names the plan types; the app shows the prices.
-- **App structure the copy and mocks assume:** three tabs (Home, History, Stats), a
+- **App structure the copy and mocks assume:** four tabs (Explore, Today, Awards, Stats), a
   floating button that starts a walk, Settings in the header.
 - The privacy policy, terms and support page describe Apple Health, Motion & Fitness,
-  location, in-app purchases and RevenueCat. Update them whenever the app starts reading
-  new data or adds an SDK.
+  location, Apple's MapKit (sights, walking routes, area names), iCloud (competitions, iCloud
+  Sync), in-app purchases and RevenueCat. Update them whenever the app starts reading new
+  data, contacts a new service or adds an SDK.
 
 - `/` – landing page
 - `/privacy/` – privacy policy (to be linked from the app and App Store Connect)
@@ -64,9 +79,11 @@ To add a language: add its code to `LANGUAGES`, `LANGUAGE_NAMES` and `LOCALES` i
 `src/i18n/index.tsx`.
 
 The landing page sections are in `src/pages/home/`: `Hero`, `Stats`, `Showcase` (one tab
-per app screen), `Walk`, `Insights` (history and trends, anchor `#trends`), `Pro` (the
-three PRO features of the app's Insights tab, free vs PRO, the free week and the plan
-types, anchor `#pro`) and `Rest` (basics, privacy, FAQ, call to action). Motion is plain CSS plus a few hooks
+per app screen), `Explore` (how a walk clears the fog and collects a sight, anchor
+`#explore`), `Collect` (cups, nearby sights, areas, competitions, the Today tab, anchor
+`#collection`), `Pro` (sightseeing tours, time-lapse, insights, free vs PRO, the welcome
+offer and the plan types, anchor `#pro`) and `Rest` (little things, privacy, FAQ, call to
+action). Motion is plain CSS plus a few hooks
 in `src/lib/motion.ts` (reveal on scroll, parallax, counters, looping demo steps); all of
 it is switched off for `prefers-reduced-motion`. The site follows the system light/dark
 setting.
@@ -74,20 +91,22 @@ setting.
 ### Screenshots
 
 There are no real screenshots yet. Every slot in `SCREENS` in `src/config.ts` is `null`,
-so the site shows built-in HTML mocks of the screens (`src/pages/home/mocks.tsx`: Today,
-Walk, Heart-rate zones, Walking metrics, Insights) inside the device frame.
+so the site shows built-in HTML mocks of the screens (`src/pages/home/mocks.tsx`: Explore,
+a sight's card, Awards › Collection, Awards › Competitions, Today) inside the device frame.
+`FogMap` in the same file is the stylised fog map used by the mocks and the demos.
 
 To use real screenshots:
 
 1. Capture raw, unframed iPhone screens (the site draws the device frame itself; do not
    use composed App Store images with headlines). The frame expects the 1206 × 2622 aspect
    ratio.
-2. Save them as `public/screens/<language>/<name>.png`, e.g. `public/screens/en/today.png`
-   and `public/screens/tr/today.png`.
-3. Set the slot in `SCREENS` to `"<name>"`, e.g. `today: "today"`.
+2. Save them as `public/screens/<language>/<name>.png`, e.g. `public/screens/en/explore.png`
+   and `public/screens/tr/explore.png`.
+3. Set the slot in `SCREENS` to `"<name>"`, e.g. `explore: "explore"`.
 
-A missing language falls back to English, then to the HTML mock. Slots: `today` (hero and
-"Today" tab), `walk`, `zones`, `metrics`, `insights` (Stats › Insights with PRO unlocked).
+A missing language falls back to English, then to the HTML mock. Slots: `explore` (hero and
+"Explore" tab), `sight` (a sight's card with Walk There / About This Place), `collection`
+(Awards › Collection), `compete` (Awards › Competitions, a new-ground competition), `today`.
 
 The mocks are laid out for a 300px-wide screen and scale with the frame; inside them use
 normal Tailwind spacing classes and `fs-<px>` for font sizes (see `.mock` in

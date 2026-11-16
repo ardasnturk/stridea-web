@@ -25,7 +25,7 @@ export const APP_STORE_URL: string | null = null;
  */
 export const SITE_URL: string | null = "https://stridea.ardasnturk.com";
 
-export type ScreenSlot = "today" | "walk" | "zones" | "metrics" | "insights";
+export type ScreenSlot = "explore" | "sight" | "collection" | "compete" | "today";
 
 /**
  * Screenshot slots used on the landing page.
@@ -40,16 +40,16 @@ export type ScreenSlot = "today" | "walk" | "zones" | "metrics" | "insights";
  * slot to `"<name>"`.
  */
 export const SCREENS: Record<ScreenSlot, string | null> = {
-  /** Hero phone and the "Today" tab: goal ring, summary card, key stats, hourly chart. */
+  /** Hero phone and the "Explore" tab: fog map with areas and sight markers, nearby card. */
+  explore: null,
+  /** "Sights" tab: a sight's card on the map with its distance, Walk There and About This Place. */
+  sight: null,
+  /** "Collection" tab: Awards › Collection with the cups and the collected sights. */
+  collection: null,
+  /** "Competitions" tab: Awards › Competitions, a new-ground competition. */
+  compete: null,
+  /** "Today" tab: steps, distance, heart rate and walks. */
   today: null,
-  /** "Walks" tab: live map with the route, timer, distance, steps and pace. */
-  walk: null,
-  /** "Heart-rate zones" tab: donut, per-zone breakdown, insight. */
-  zones: null,
-  /** "Walking metrics" tab: four metric cards and the heart-rate chart. */
-  metrics: null,
-  /** "Insights" tab (PRO): "For You" suggestions, trend comparison, most active hours, motion stats. */
-  insights: null,
 };
 
 /** Localized screenshot shown on the site. */

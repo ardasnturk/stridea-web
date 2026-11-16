@@ -30,9 +30,10 @@ export interface BaseDictionary {
   meta: { title: string; description: string };
   nav: {
     features: string;
-    walks: string;
-    /** Link to the "History and trends" section (`home.insights`). */
-    trends: string;
+    /** Link to the "How exploring works" section (`home.explore`, anchor `#explore`). */
+    explore: string;
+    /** Link to the collection section (`home.collect`, anchor `#collection`). */
+    collection: string;
     pro: string;
     privacy: string;
     faq: string;
@@ -74,7 +75,14 @@ export interface BaseDictionary {
 }
 
 /** The screens shown as tabs in the showcase. Same ids as the screenshot slots in `src/config.ts`. */
-export type ShowcaseTabId = "today" | "walk" | "zones" | "metrics" | "insights";
+export type ShowcaseTabId = "explore" | "sight" | "collection" | "compete" | "today";
+
+/** A sample sight in the mocks. `category` is an index into `mock.categories`; `note` is the line under the name. */
+export interface SampleSight {
+  name: string;
+  category: number;
+  note: string;
+}
 
 /** Texts of the landing page. Lives in `src/i18n/home/<language>.ts`. */
 export interface HomeDictionary {
@@ -87,60 +95,80 @@ export interface HomeDictionary {
     badges: string[];
     screenshotAlt: string;
     /** Floating cards around the phone. */
-    chipGoal: string;
-    chipWalkTitle: string;
-    chipWalkBody: string;
-    chipStreak: string;
+    chipDiscoveryTitle: string;
+    chipDiscoveryBody: string;
+    chipGround: string;
+    chipCup: string;
   };
   /** Animated counters under the hero. */
   stats: { value: number; prefix?: string; suffix?: string; label: string }[];
   /** Units used in the mock screens and demos. */
-  units: { steps: string; km: string; kmh: string; perKm: string; min: string; kcal: string; bpm: string; floors: string; cm: string; days: string; h: string; spm: string };
+  units: { steps: string; km: string; m: string; km2: string; min: string; kcal: string; bpm: string; floors: string; h: string };
   /** Labels inside the HTML mock screens (shown while a screenshot slot is `null`). */
   mock: {
+    /** The app's four tabs: Explore, Today, Awards, Stats. */
+    tabs: [string, string, string, string];
+    /** Landmarks, museums, castles, stages, libraries, parks (plural, as in the app). */
+    categories: [string, string, string, string, string, string];
+    /** Bronze, silver, gold, platinum. */
+    tiers: [string, string, string, string];
+    /** "{distance} away". */
+    away: string;
+    walkThere: string;
+    /** Label of the walk timer. */
+    walkDuration: string;
+    explore: {
+      title: string;
+      thisWeek: string;
+      nearestFog: string;
+      /** "{distance} to the north". */
+      fogDirection: string;
+      nearby: string;
+      /** "{count} more to discover nearby". */
+      more: string;
+      /** The first is the nearby suggestion, the second (a park) is found on the demo walk. */
+      sights: [SampleSight, SampleSight, SampleSight];
+    };
+    sight: {
+      sight: SampleSight;
+      walkTime: string;
+      about: string;
+      hint: string;
+    };
+    /** Awards › Collection. */
+    collection: {
+      title: string;
+      /** Collection, Medals, Competitions. */
+      pages: [string, string, string];
+      cups: string;
+      collected: string;
+      /** "{count} sights in your collection." */
+      count: string;
+      sights: [SampleSight, SampleSight, SampleSight];
+    };
+    /** Awards › Competitions, a new-ground competition. */
+    compete: {
+      name: string;
+      kind: string;
+      daysLeft: string;
+      you: string;
+      people: [string, string, string];
+      note: string;
+    };
     today: {
       title: string;
       date: string;
       /** "{goal}" is replaced with the formatted goal. */
       goal: string;
-      /** "{percent}" and "{left}" are replaced. */
-      summary: string;
       distance: string;
-      activeTime: string;
       calories: string;
-      floors: string;
       heartRate: string;
-      hourly: string;
+      floors: string;
+      walks: string;
+      walk: string;
+      watch: string;
     };
-    walk: { recording: string; duration: string; distance: string; steps: string; pace: string; pause: string; finish: string };
-    zones: { title: string; total: string; zone: string; time: string; average: string; insightLabel: string; insight: string };
-    metrics: { title: string; speed: string; stepLength: string; asymmetry: string; doubleSupport: string; heartRate: string; average: string; max: string };
-    /** The Stats screen with its "Insights" tab selected (PRO). Labels are the app's own. */
-    insights: {
-      /** Screen title and its four tabs; the last one is selected. */
-      title: string;
-      tabs: [string, string, string, string];
-      forYou: string;
-      /** Sample suggestions. "{left}" in a text is replaced with the steps left to today's goal. */
-      tips: [Item, Item, Item];
-      trend: string;
-      last7: string;
-      vs7: string;
-      last30: string;
-      vs30: string;
-      consistency: string;
-      consistencyNote: string;
-      weekdayPattern: string;
-      /** Sentence under the weekday chart, e.g. "Saturday is your most active day." */
-      mostActiveDay: string;
-      hours: string;
-      onFoot: string;
-      walksPerDay: string;
-      longestWalk: string;
-      longestSitting: string;
-      cadence: string;
-      vehicles: string;
-    };
+    discovery: { title: string; added: string };
   };
   showcase: {
     eyebrow: string;
@@ -148,70 +176,54 @@ export interface HomeDictionary {
     subtitle: string;
     tabs: Record<ShowcaseTabId, { label: string; title: string; text: string; points: string[]; screenshotAlt: string }>;
   };
-  walk: {
+  /** "How exploring works": the fog clearing along a walk. */
+  explore: {
     eyebrow: string;
     title: string;
     subtitle: string;
     steps: [Item, Item, Item];
     start: string;
     recording: string;
-    savedTitle: string;
-    savedBody: string;
+    newGround: string;
   };
-  insights: {
+  /** Collection, cups, nearby sights, areas, competitions and the Today tab. */
+  collect: {
     eyebrow: string;
     title: string;
     subtitle: string;
-    trends: {
-      title: string;
-      text: string;
-      week: string;
-      month: string;
-      /** Monday first. */
-      weekdays: [string, string, string, string, string, string, string];
-      goalLine: string;
-      dailyAverage: string;
-      bestDay: string;
-      streak: string;
-    };
-    history: {
-      title: string;
-      text: string;
-      days: [string, string, string];
-      goalReached: string;
-      walk: string;
-      sourceWatch: string;
-    };
-    zones: { title: string; text: string };
-    metrics: { title: string; text: string };
-    heart: { title: string; text: string };
+    cups: { title: string; text: string; thresholds: string };
+    nearby: { title: string; text: string };
+    areas: { title: string; text: string; legendHalf: string; legendStarted: string };
+    compete: { title: string; text: string };
+    today: { title: string; text: string };
   };
-  /** The PRO section: the three Insights features, then free vs PRO and the plans. Never state prices. */
+  /** The PRO section: the PRO features, then free vs PRO, the welcome offer and the plans. Never state prices. */
   pro: {
     eyebrow: string;
     title: string;
     subtitle: string;
-    coach: {
+    tour: { title: string; text: string; stops: [string, string, string]; total: string };
+    timelapse: { title: string; text: string; week: string };
+    insights: {
       title: string;
       text: string;
       weekTitle: string;
       /** A sample of the on-device summary. */
       weekSample: string;
       weekNote: string;
+      items: string[];
     };
-    analysis: { title: string; text: string; markersTitle: string; markers: string[]; markersNote: string };
-    motion: { title: string; text: string; note: string };
     plans: {
       freeTitle: string;
       freeItems: string[];
       proTitle: string;
       proItems: string[];
-      trialTitle: string;
-      trialText: string;
+      offerTitle: string;
+      offerText: string;
       plansTitle: string;
       plansText: string;
-      /** Yearly, monthly, weekly, lifetime. */
-      options: [string, string, string, string];
+      /** Yearly, 3 months, monthly, weekly, lifetime. */
+      options: [string, string, string, string, string];
       note: string;
     };
   };
@@ -224,6 +236,7 @@ export interface HomeDictionary {
     link: string;
     diagramPhone: string;
     diagramHealth: string;
+    diagramMaps: string;
     diagramServer: string;
     diagramAds: string;
     diagramNone: string;

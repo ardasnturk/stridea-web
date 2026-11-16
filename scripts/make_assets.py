@@ -88,22 +88,30 @@ def og(app_icon):
     ic = app_icon.resize((132, 132), Image.LANCZOS)
     img.alpha_composite(ic, (90, 96))
     d.text((246, 116), NAME, font=font(84), fill=(11, 18, 32))
-    d.text((90, 290), "Every step, every walk,", font=font(62), fill=(11, 18, 32))
-    d.text((90, 366), "every heartbeat.", font=font(62), fill=(20, 99, 255))
-    d.text((90, 480), "Step counter and walk tracker for iPhone.", font=font(32, False), fill=(75, 85, 105))
-    d.text((90, 524), "Connected to Apple Health. No account, no ads.", font=font(32, False), fill=(75, 85, 105))
-    # Goal ring on the right.
-    ring = Image.new("RGBA", (360 * SS, 360 * SS), (0, 0, 0, 0))
-    rd = ImageDraw.Draw(ring)
-    box = (30 * SS, 30 * SS, 330 * SS, 330 * SS)
-    rd.ellipse((10 * SS, 10 * SS, 350 * SS, 350 * SS), fill=(255, 255, 255, 255))
-    rd.arc(box, 0, 360, fill=(226, 234, 250, 255), width=30 * SS)
-    rd.arc(box, -90, 213, fill=(20, 99, 255, 255), width=30 * SS)
-    ring = ring.resize((360, 360), Image.LANCZOS)
-    img.alpha_composite(ring, (770, 135))
+    d.text((90, 290), "Your city is under fog.", font=font(62), fill=(11, 18, 32))
+    d.text((90, 366), "Walk to uncover it.", font=font(62), fill=(20, 99, 255))
+    d.text((90, 480), "City walking and sightseeing for iPhone.", font=font(32, False), fill=(75, 85, 105))
+    d.text((90, 524), "Collect sights, win cups. No account, no ads.", font=font(32, False), fill=(75, 85, 105))
+    # Hexagonal areas on the right: orange when half uncovered, grey otherwise, with a few sights.
+    import math
+    layer = Image.new("RGBA", (360 * SS, 400 * SS), (0, 0, 0, 0))
+    ld = ImageDraw.Draw(layer)
+    r = 52
+    cells = [(0, 1, 1), (0, 2, 2), (1, 0, 1), (1, 1, 2), (1, 2, 2), (2, 1, 2), (2, 2, 1), (2, 0, 0), (3, 1, 1), (3, 2, 0), (0, 3, 1)]
+    for c, row, state in cells:
+        cx = 60 + c * 1.5 * r
+        cy = 50 + (row + (0.5 if c % 2 else 0)) * math.sqrt(3) * r
+        pts = [((cx + r * math.cos(math.radians(60 * k))) * SS, (cy + r * math.sin(math.radians(60 * k))) * SS) for k in range(6)]
+        fill = (255, 238, 217, 255) if state == 2 else (255, 255, 255, 230) if state == 1 else (226, 232, 242, 255)
+        outline = (255, 149, 0, 255) if state == 2 else (190, 198, 212, 255)
+        ld.polygon(pts, fill=fill, outline=outline, width=(5 if state == 2 else 2) * SS)
+    for x, y, color in ((138, 150, (140, 92, 245)), (216, 240, (217, 107, 26)), (60, 320, (41, 158, 82))):
+        ld.ellipse(((x - 16) * SS, (y - 16) * SS, (x + 16) * SS, (y + 16) * SS), fill=color + (255,), outline=(255, 255, 255, 255), width=4 * SS)
+    ld.ellipse(((280 - 16) * SS, (110 - 16) * SS, (280 + 16) * SS, (110 + 16) * SS), fill=(154, 161, 173, 255), outline=(255, 255, 255, 255), width=4 * SS)
+    layer = layer.resize((360, 400), Image.LANCZOS)
+    img.alpha_composite(layer, (790, 110))
     d = ImageDraw.Draw(img)
-    d.text((950, 300), "8,426", font=font(72), fill=(11, 18, 32), anchor="mm")
-    d.text((950, 356), "steps", font=font(28, False), fill=(110, 120, 140), anchor="mm")
+    d.text((1070, 220), "?", font=font(26), fill=(255, 255, 255), anchor="mm")
     return img.convert("RGB")
 
 

@@ -5,16 +5,16 @@ import { ProBadge } from "../../components/ProBadge";
 import { Reveal } from "../../components/Reveal";
 import { useLanguage, type ShowcaseTabId } from "../../i18n";
 import { useInView, useReducedMotion } from "../../lib/motion";
-import { InsightsMock, MetricsMock, TodayMock, WalkMock, ZonesMock } from "./mocks";
+import { CollectionMock, CompeteMock, ExploreMock, SightMock, TodayMock } from "./mocks";
 import { SectionHeading } from "./shared";
 
 /** One tab per screen. `Mock` is shown while the tab's screenshot slot in `src/config.ts` is `null`; `pro` adds the PRO badge. */
 const TABS: { id: ShowcaseTabId; icon: IconName; Mock: ComponentType<{ active?: boolean }>; pro?: boolean }[] = [
+  { id: "explore", icon: "map", Mock: ExploreMock },
+  { id: "sight", icon: "pin", Mock: SightMock },
+  { id: "collection", icon: "trophy", Mock: CollectionMock },
+  { id: "compete", icon: "users", Mock: CompeteMock },
   { id: "today", icon: "target", Mock: TodayMock },
-  { id: "walk", icon: "walk", Mock: WalkMock },
-  { id: "zones", icon: "heart", Mock: ZonesMock },
-  { id: "metrics", icon: "pulse", Mock: MetricsMock, pro: true },
-  { id: "insights", icon: "sparkles", Mock: InsightsMock, pro: true },
 ];
 const AUTO_ADVANCE_MS = 7000;
 
@@ -22,7 +22,7 @@ export function Showcase() {
   const { t } = useLanguage();
   const a = t.home.showcase;
   const reduced = useReducedMotion();
-  const [active, setActive] = useState<ShowcaseTabId>("today");
+  const [active, setActive] = useState<ShowcaseTabId>("explore");
   const [userPicked, setUserPicked] = useState(false);
   const [ref, inView] = useInView<HTMLDivElement>({ threshold: 0.35 });
   const autoplay = inView && !userPicked && !reduced;

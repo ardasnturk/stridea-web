@@ -6,7 +6,7 @@ import { APP_STORE_URL } from "../../config";
 import { useLanguage } from "../../i18n";
 import { SectionHeading } from "./shared";
 
-const MORE_ICONS: IconName[] = ["target", "bars", "stairs", "pause", "route", "watch", "flame", "globe"];
+const MORE_ICONS: IconName[] = ["watch", "mountain", "route", "cloud", "sparkles", "medal", "widgets", "globe"];
 
 export function More() {
   const { t } = useLanguage();
@@ -33,7 +33,7 @@ export function More() {
   );
 }
 
-const PRIVACY_ICONS: IconName[] = ["person", "megaphone", "phone", "pin"];
+const PRIVACY_ICONS: IconName[] = ["person", "megaphone", "phone", "map"];
 
 export function Privacy() {
   const { t } = useLanguage();
@@ -75,7 +75,7 @@ export function Privacy() {
   );
 }
 
-/** iPhone at the centre, Apple Health linked to it, servers and ads crossed out. */
+/** iPhone at the centre, Apple Health and Apple Maps linked to it, servers and ads crossed out. */
 function PrivacyDiagram() {
   const { t } = useLanguage();
   const p = t.home.privacy;
@@ -118,8 +118,16 @@ function PrivacyDiagram() {
           {p.diagramAds}: <span className="text-zone5">{p.diagramNone}</span>
         </span>
       </div>
-      {/* iPhone ↔ Apple Health link */}
+      {/* Left: Apple Maps */}
+      <div className="absolute left-[0%] top-1/2 flex -translate-y-1/2 flex-col items-center gap-1.5">
+        <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand shadow-lg dark:bg-gray-900 dark:text-brand-light">
+          <Icon name="map" />
+        </span>
+        <span className="whitespace-nowrap rounded-full bg-white/90 px-2.5 py-0.5 text-xs font-medium shadow-sm dark:bg-gray-900/90">{p.diagramMaps}</span>
+      </div>
+      {/* iPhone ↔ Apple Health and Apple Maps links */}
       <span className="absolute left-1/2 top-[19%] h-[11%] w-0 -translate-x-1/2 border-l-2 border-dashed border-zone5/60" />
+      <span className="absolute left-[16%] top-[46%] h-0 w-[18%] border-t-2 border-dashed border-brand/50" />
     </div>
   );
 }
